@@ -1,0 +1,74 @@
+.wrapper {
+    display: flex;
+    margin-left: 32px;
+    position: relative;
+    height: 100%;
+
+    .title-text {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .line-1 {
+            display: flex;
+            align-items: baseline;
+
+        }
+
+
+        .flex-column {
+            flex-direction: column;
+        }
+
+        .text {
+            display: flex;
+            height: 90px;
+            align-items: baseline;
+            font-size: 4rem;
+            font-weight: 600;
+
+            .name-text {
+                margin-left: 24px;
+                color: rgba(255, 182, 51, 255);
+            }
+
+            .tag {
+                color: rgba(0, 0, 0, 0.2);
+
+            }
+
+            ;
+
+            .sim-cursor {
+                color: rgba(0, 0, 0, 0.3);
+                font-weight: 400
+            }
+
+            .invisible {
+                opacity: 0;
+            }
+        }
+    }
+
+
+
+    .side-block {
+        position: absolute;
+        right: 0%;
+        width: 0;
+        height: 100%;
+        background-color: rgba(255, 182, 51, 255);
+        animation: slide-in 1200ms forwards;
+
+        @keyframes slide-in {
+            from {
+                width: 0;
+            }
+            to {
+                width: 25%;
+            }
+        }
+    }
+
+}

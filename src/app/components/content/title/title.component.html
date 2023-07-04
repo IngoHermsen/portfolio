@@ -1,1 +1,29 @@
-<p>title works!</p>
+<div class="wrapper">
+    <div class=title-text>
+        <div class="line-1 text">
+                <div class="h1-tag-open tag" #h1TagOpen></div>
+                <span class="greeting-text" #iAmText></span>
+                <span [hidden]="" class="name-text" #nameText></span>
+                <span [hidden]="firstLineFinished" [class.invisible]="cursorVisible" class="sim-cursor"
+                    #simCursor>|</span>
+                <div [hidden]="!h1TagFinished" class="h1-tag-close tag">&lt;/h1&gt;</div>
+        </div>
+
+        <div class="line-2 text">
+            <div class="title-tag-open tag" #titleTagOpen></div>
+            <span class="job-title" #jobTitleText></span>
+            <span [hidden]="!firstLineFinished || secondLineFinished" [class.invisible]="cursorVisible"
+                class="sim-cursor" #simCursor>|</span>
+            <div [hidden]="!titleTagFinished" class="title-tag-close tag">&lt;title&gt;</div>
+        </div>
+
+        <span>Scroll Down</span>
+    </div>
+
+    <div>
+
+    </div>
+    <div *ngIf="titleTagFinished" class="side-block">
+
+    </div>
+</div>
