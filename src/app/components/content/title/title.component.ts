@@ -104,13 +104,15 @@ export class TitleComponent implements OnInit, AfterViewInit {
           this.typeState.next('greetingDeleted')
         }
       }, 75)
-    }, 1500)
+    }, 1200)
 
   }
 
   finishFirstLine() {
     this.firstLineFinished = true;
-    this.typeStrings(this.titleTagOpen, this.titleTagOpenEl);
+    setTimeout(() => {
+      this.typeStrings(this.titleTagOpen, this.titleTagOpenEl);
+    }, 600)
   }
 
   finishSecondLine() {
