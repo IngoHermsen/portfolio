@@ -1,9 +1,11 @@
 .content {
+    height: 100vh;
+    overflow: auto;
     scroll-snap-type: y mandatory;
 }
 
 .vh {
-    height: 100vh;
+    height: 100%;
     scroll-snap-align: start;
 }
 
