@@ -1,1 +1,18 @@
-<p>projects works!</p>
+<div class="content">
+    <div class="head-area">
+        <span>
+            <h1>Projects</h1>
+        </span>
+
+        <article>
+            Feel free to explore my projects.
+        </article>
+    </div>
+    <div class="project-area">
+        <ng-container *ngFor="let project of projects, index as i">
+            <div class="project">
+                <app-project [project]="project"></app-project>
+            </div>
+        </ng-container>
+    </div>
+</div>
