@@ -1,6 +1,14 @@
 <div class="card">
-    <div class="project-description">
-        <h2>{{ project.title }}</h2>
+    <div class="description">
+        <div class="text">
+            <h2>{{ project.title }}</h2>
+            <div>{{ project.description }}</div>
+        </div>
+        <div class="techs">
+            <ng-container *ngFor="let tech of project.usedTechs, index as i">
+                <span class="tech">{{ tech }}</span>
+            </ng-container>
+        </div>
     </div>
     <div class="preview">
 

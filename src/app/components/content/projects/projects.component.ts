@@ -20,8 +20,8 @@ export class ProjectsComponent {
     },
     {
       title: 'Slack Clone',
-      usedTechs: ['Javascript', 'HTML', 'CSS', 'API'],
-      description: 'Instant messaging service, based on "Slack" ',
+      usedTechs: ['Angular', 'Typescript', 'Firebase'],
+      description: 'Instant messaging service, based on "Slack".',
       link: 'https://ingo-hermsen.developerakademie.net/slack-clone/',
       githubLink: 'https://github.com/IngoHermsen/slack-clone/',
       jsDoc: false,
@@ -32,6 +32,17 @@ export class ProjectsComponent {
       title: 'El Pollo Loco',
       usedTechs: ['Javascript', 'HTML', 'CSS'],
       description: 'A simple Jump-and-Run-Game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
+      link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
+      githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
+      jsDoc: true,
+      jsDocLink: 'https://ingo-hermsen.developerakademie.net/elpolloloco/out/',
+      imagePath: 'preview_elpolloloco.png'
+    },
+
+    {
+      title: 'Portfolio',
+      usedTechs: ['Angular', 'Typescript'],
+      description: 'You are already using it. Thanks for reading that far',
       link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,

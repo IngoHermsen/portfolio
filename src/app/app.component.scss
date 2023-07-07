@@ -1,11 +1,17 @@
 .content {
     height: 100vh;
     overflow: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 
 .vh {
     height: 100%;
+}
+
+.snap {
     scroll-snap-align: start;
 }
 
+.snap-end {
+    scroll-snap-stop: always;
+}
