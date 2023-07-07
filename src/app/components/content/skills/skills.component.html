@@ -1,1 +1,27 @@
-<p>skills works!</p>
+<div class="content">
+    <div class="text area">
+        <div class="text">
+            <h2>Skills</h2>
+            <article>
+               
+                I built landing pages and several web apps, as well as an OOP-based Jump-and-Run-Game with the
+                respective technologies.<br>
+               
+                In several coding projects, I adapted given design guidelines that
+                have been created with Figma.<br>
+            
+                While learning how to code, I experienced how to develop software projects in a collaborative team by
+                using Github.
+            </article>
+        </div>
+    </div>
+    <div class="icons area">
+        <ng-container *ngFor="let skill of skills, index as i">
+            <div class="skill">
+                <img class="icon" src="./assets/icons/{{ skill.fileName }}" alt="">
+                <div class="name">{{ skill.name }}</div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>
