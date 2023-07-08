@@ -6,7 +6,7 @@
 body {
     position: relative;
     color: white;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(56, 55, 55);
     margin: 0px;
     font-family: 'Poppins';
 }
@@ -23,10 +23,8 @@ h1 {
         bottom: -12px;
         left: 0px;
         background-color: rgba(255, 182, 51, 255);
-
     }
 }
-
 
 article {
     margin-top: 24px;
@@ -41,4 +39,8 @@ textarea {
     width: 100%;
     height: 150px;
     resize: vertical;
+}
+
+i:hover {
+    user-select: none;
 }

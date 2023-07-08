@@ -16,7 +16,6 @@
 
         }
 
-
         .flex-column {
             flex-direction: column;
         }
@@ -49,8 +48,8 @@
                 opacity: 0;
             }
         }
-    }
 
+    }
 
 
     .side-block {
@@ -65,9 +64,48 @@
             from {
                 width: 0;
             }
+
             to {
                 width: 25%;
             }
+        }
+    }
+
+
+    .chevron {
+        position: absolute;
+        bottom: 80px;
+        width: 100%;
+        text-align: center;
+        animation: pointdown 2s forwards ;
+        display: flex;
+        flex-direction: column;
+
+
+        @keyframes pointdown {
+            0% {
+                bottom: 80px;
+            }
+            25% {
+                bottom: 70px;
+            }
+            50% {
+                bottom: 80px;
+            }
+            75% {
+                bottom: 70px;
+            }
+            100% {
+                bottom: 80px;
+            }
+        }
+
+        i { 
+            user-select: none;
+            bottom: 40px;
+            font-size: 40px;
+
+           
         }
     }
 
