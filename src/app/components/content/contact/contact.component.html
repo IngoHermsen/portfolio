@@ -1,1 +1,38 @@
-<p>contact works!</p>
+<div class="content">
+    <div class="text">
+        <h1>Contact me</h1>
+        <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus delectus accusantium, ipsam adipisci in sit
+            fugit omnis laudantium mollitia similique dolorum, dolores accusamus libero asperiores dolorem, deleniti
+            quis.
+            Voluptatum, nihil?
+        </article>
+    </div>
+
+
+    <form action="" [formGroup]="formGroup">
+        <span class=" p-float-label">
+            <input formControlName="name" pInputText id="name">
+            <label htmlFor="name">name</label>
+        </span>
+        <span class=" p-float-label">
+            <input formControlName="mail" pInputText id="mail">
+            <label htmlFor="email">email</label>
+        </span>
+        <span class=" p-float-label">
+            <input formControlName="company" pInputText id="company">
+            <label htmlFor="company">company (optional)</label>
+        </span>
+        <span class=" p-float-label">
+            <input formControlName="Website" pInputText id="website">
+            <label htmlFor="website">website (optional)</label>
+        </span>
+        <span class=" p-float-label">
+            <textarea formControlName="message" pInputTextarea id="message"></textarea>
+            <label htmlFor="message">message</label>
+        </span>
+
+        <p-button class="button" label="Submit"></p-button>
+    </form>
+
+</div>

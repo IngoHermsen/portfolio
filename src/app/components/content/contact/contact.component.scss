@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0px auto;
+}
+
+form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border: 1px solid rgba(255, 182, 51, 255);
+
+    span {
+        width: 300px;
+
+        input {
+            width: 100%;
+        }
+    }
+}
