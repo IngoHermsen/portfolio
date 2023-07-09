@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
+  showThis: boolean = false;
 
+  constructor(
+    public viewService: ViewService
+  ) {
+    this.viewService.introFinished.subscribe((value) => {  
+      console.log('show value', value);
+          
+      this.showThis = value;
+    })
+  }
 }

@@ -71,13 +71,47 @@
         }
     }
 
+       .image {
+        position: relative;
+        width: 250px;
+
+        img {
+            position: absolute;
+            opacity: 0;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            left: 0px;
+            height: 100%;
+            z-index: 3;
+   
+        }
+    }
+
+    .show-image {
+        animation: visible 1000ms forwards;
+
+        @keyframes visible {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+    }
+
+
+
 
     .chevron {
         position: absolute;
         bottom: 80px;
         width: 100%;
         text-align: center;
-        animation: pointdown 2s forwards ;
+        animation: pointdown 2s forwards;
         display: flex;
         flex-direction: column;
 
@@ -86,26 +120,30 @@
             0% {
                 bottom: 80px;
             }
+
             25% {
                 bottom: 70px;
             }
+
             50% {
                 bottom: 80px;
             }
+
             75% {
                 bottom: 70px;
             }
+
             100% {
                 bottom: 80px;
             }
         }
 
-        i { 
+        i {
             user-select: none;
             bottom: 40px;
             font-size: 40px;
 
-           
+
         }
     }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ViewService } from './core/services/view.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio-ng-project';
+  overflowScroll: boolean = false;
+
+  constructor(
+    public viewService: ViewService,
+  ) {
+    this.viewService.introFinished.subscribe((value) => {
+      this.overflowScroll = value;
+    })
+  }
 }

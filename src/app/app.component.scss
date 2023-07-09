@@ -1,11 +1,11 @@
-.wrapper {
-    height: 100vh;
-    overflow: auto;
-    scroll-snap-type: y proximity;
+.overflowScroll {
+    overflow-y: scroll !important;
 }
 
-.title {
-    
+.wrapper {
+    height: 100vh;
+    overflow-y: hidden;
+    scroll-snap-type: y proximity;
 }
 
 .content {

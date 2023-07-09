@@ -1,4 +1,18 @@
+.show { 
+    animation: show 1000ms forwards;
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
 .top-bar {
+    opacity: 0;
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -9,6 +23,10 @@
     height: 80px;
     background-color: rgb(56, 55, 55);
     border-bottom: 1px solid rgba(255, 182, 51, 255);
+
+
+
+ 
 
     .left-container {
         width: 250px;

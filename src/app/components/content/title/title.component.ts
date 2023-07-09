@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { Subject, concatMap, delay, from, map, mapTo, mergeMap, of, switchMap, timer, timestamp } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
+import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
   selector: 'app-title',
@@ -7,7 +8,7 @@ import { Subject, concatMap, delay, from, map, mapTo, mergeMap, of, switchMap, t
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit, AfterViewInit {
-  @Output() introFinished: EventEmitter<boolean> = new EventEmitter;
+  finalView: boolean = false;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
@@ -35,8 +36,11 @@ export class TitleComponent implements OnInit, AfterViewInit {
   typeState: Subject<string> = new Subject();
 
   constructor(
-
+    public viewService: ViewService
   ) {
+    this.viewService.introFinished.subscribe((value) => {
+      this.finalView = value;
+    })
   }
 
   ngOnInit(): void {
@@ -45,8 +49,6 @@ export class TitleComponent implements OnInit, AfterViewInit {
     }, 450);
 
     this.typeState.subscribe((value) => {
-      console.log(value);
-
       switch (value) {
         case this.h1TagOpen: this.finishH1Tag(); break;
         case this.greeting: this.deleteGreeting(); break;
@@ -54,7 +56,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
         case this.iAmText: this.typeStrings(this.nameText, this.nameTextEl); break;
         case this.nameText: this.finishFirstLine(); break;
         case this.titleTagOpen: this.finishTitleTag(); break;
-        case this.jobTitle: this.secondLineFinished = true; break;
+        case this.jobTitle: this.finishSecondLine(); break;
       }
     })
   }
@@ -75,7 +77,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
         switch (processedCharacters) {
           case string.length: this.typeState.next(string); break;
         };
-
+        
       }, index * 90)
     })
   }
@@ -84,13 +86,11 @@ export class TitleComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.h1TagFinished = true;
       this.typeStrings(this.greeting, this.iAmTextEl);
-    }, 250)
+    }, 150)
   }
 
   finishTitleTag() {
     this.titleTagFinished = true;
-    console.log('this', this.titleTagFinished);
-
     this.typeStrings(this.jobTitle, this.jobTitleTextEl);
   }
 
@@ -118,7 +118,8 @@ export class TitleComponent implements OnInit, AfterViewInit {
   }
 
   finishSecondLine() {
-    this.secondLineFinished = true;
+    this.secondLineFinished = true;      
+    this.viewService.introFinished.next(true);
   }
 
 }

@@ -19,11 +19,11 @@
 
     </div>
 
-    <div>
-
+    <div class="image">
+        <img [class.show-image]="finalView" src="/assets/img/profile-image_1.png" alt="profile-image-i">
     </div>
 
-    <span class="chevron">
+    <span *ngIf="finalView" class="chevron">
         <i class="pi pi-chevron-down"></i>
     </span>
     <div *ngIf="titleTagFinished" class="side-block"></div>
