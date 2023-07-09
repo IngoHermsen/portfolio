@@ -11,6 +11,15 @@ body {
     font-family: 'Poppins';
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;  
+}
+
 h1 {
     display: inline;
     position: relative;
@@ -41,6 +50,3 @@ textarea {
     resize: vertical;
 }
 
-i:hover {
-    user-select: none;
-}

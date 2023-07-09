@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Subject, concatMap, delay, from, map, mapTo, mergeMap, of, switchMap, timer, timestamp } from 'rxjs';
 
 @Component({
@@ -7,6 +7,8 @@ import { Subject, concatMap, delay, from, map, mapTo, mergeMap, of, switchMap, t
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit, AfterViewInit {
+  @Output() introFinished: EventEmitter<boolean> = new EventEmitter;
+
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
   @ViewChild('nameText') nameTextEl!: ElementRef;

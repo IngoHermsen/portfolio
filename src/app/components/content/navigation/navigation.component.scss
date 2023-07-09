@@ -1,13 +1,18 @@
 .top-bar {
+    position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    position: absolute;
+    padding: 0px 48px;
     z-index: 1;
     width: 100vw;
     height: 80px;
     background-color: rgb(56, 55, 55);
     border-bottom: 1px solid rgba(255, 182, 51, 255);
+
+    .left-container {
+        width: 250px;
+    }
 
     nav {
         display: flex;
@@ -39,22 +44,38 @@
 
                 &:after {
                     animation: underline 130ms forwards;
-                    
+
                     @keyframes underline {
                         from {
                             width: 0%;
                         }
+
                         to {
                             width: 100%;
                         }
                     }
                 }
-
             }
-
-
         }
+    }
 
+    .public-media-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 250px;
+        height: 100%;
+        gap: 36px;
+
+        i { 
+            vertical-align: middle;
+            color: white;
+            font-size: 36px;
+            
+            &:hover {
+                color: rgba(255, 182, 51, 255);
+            }
+        }
 
     }
 }
