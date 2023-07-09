@@ -58,6 +58,11 @@
             }
         }
 
+        img {
+            width: 100%;
+            object-fit: fill;
+        }
+
         .pin {
             position: absolute;
             top: -10px;
