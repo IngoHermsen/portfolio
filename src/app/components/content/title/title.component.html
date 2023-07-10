@@ -24,7 +24,7 @@
     </div>
 
     <span *ngIf="finalView" class="chevron">
-        <i class="pi pi-chevron-down"></i>
+        <i routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe')" class="pi pi-chevron-down"></i>
     </span>
     <div *ngIf="titleTagFinished" class="side-block"></div>
 </div>

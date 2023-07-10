@@ -1,11 +1,7 @@
-.overflowScroll {
-    overflow-y: scroll !important;
-}
 
 .wrapper {
     height: 100vh;
-    overflow-y: hidden;
-    scroll-snap-type: y proximity;
+  
 }
 
 .content {
@@ -21,8 +17,5 @@
     height: calc(100vh);
 }
 
-.snap {
-    scroll-snap-align: start;
-}
 
 

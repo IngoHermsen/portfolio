@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="text area">
+    <div class="text area" data-aos="fade-right">
         <div class="text">
             <h1>Skills</h1>
             <article>
@@ -17,7 +17,7 @@
     </div>
     <div class="icons area">
         <ng-container *ngFor="let skill of skills, index as i">
-            <div class="skill">
+            <div class="skill"  data-aos="zoom-in">
                 <img class="icon" src="./assets/icons/{{ skill.fileName }}" alt="">
                 <div class="name">{{ skill.name }}</div>
             </div>

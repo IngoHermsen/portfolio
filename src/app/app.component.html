@@ -1,20 +1,20 @@
 <app-navigation></app-navigation>
 
-<div [class.overflowScroll]="overflowScroll" class="wrapper">
+<div class="wrapper">
 
-    <div class="title content snap">
+    <div class="title content">
         <app-title></app-title>
     </div>
-    <div class="content snap">
+    <div *ngIf="showAll" class="content" id="aboutMe">
         <app-about-me></app-about-me>
     </div>
-    <div class="content snap">
+    <div *ngIf="showAll" class="content" id="skills">
         <app-skills></app-skills>
     </div>
-    <div class="projects-content snap">
+    <div *ngIf="showAll" class="projects-content" id="projects">
         <app-projects></app-projects>
     </div>
-    <div class="content snap">
+    <div *ngIf="showAll" class="content" id="contact">
         <app-contact></app-contact>
     </div>
 </div>

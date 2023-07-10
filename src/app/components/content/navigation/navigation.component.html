@@ -1,10 +1,10 @@
 <div [class.show]="this.showThis" class="top-bar">
     <div class="left-container"></div>
     <nav>
-        <span href="">about me</span>
-        <span href="">skills</span>
-        <span href="">projects</span>
-        <span href="">contact</span>
+        <span routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe')">about me</span>
+        <span routerLink="/skills" (click)="viewService.jumpToSection('skills')">skills</span>
+        <span routerLink="/projects" (click)="viewService.jumpToSection('projects')">projects</span>
+        <span routerLink="/contact" (click)="viewService.jumpToSection('contact')">contact</span>
     </nav>
     <div class="public-media-links">
         <a href="https://www.linkedin.com/in/ingo-hermsen/" target="_blank"><i class="pi pi-linkedin"></i></a>
