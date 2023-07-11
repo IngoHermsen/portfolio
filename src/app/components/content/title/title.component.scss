@@ -71,7 +71,9 @@
         }
     }
 
-       .image {
+    .image {
+        user-select: none;
+
         position: relative;
         width: 250px;
 
@@ -84,7 +86,7 @@
             left: 0px;
             height: 100%;
             z-index: 1;
-   
+
         }
     }
 
@@ -107,6 +109,7 @@
 
 
     .chevron {
+        user-select: none;
         position: absolute;
         bottom: 80px;
         width: 100%;
@@ -139,14 +142,17 @@
         }
 
         i {
-            user-select: none;
             bottom: 40px;
             font-size: 40px;
 
             &:hover {
                 cursor: pointer;
+                color: rgba(255, 182, 51, 255)
             }
         }
+
+
+
     }
 
 }

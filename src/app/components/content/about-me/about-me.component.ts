@@ -8,10 +8,10 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit, AfterViewInit {
+
+
   swingImgAnimation: boolean = false;
 
-  @ViewChild('imageArea') imageArea!: ElementRef;
-  @ViewChild('imageContent') imageContent!: ElementRef;
 
   constructor() {
 

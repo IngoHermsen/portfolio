@@ -16,11 +16,10 @@
             <div [hidden]="!titleTagFinished" class="title-tag-close tag">&lt;title&gt;</div>
         </div>
 
-
     </div>
 
     <div class="image">
-        <img [class.show-image]="finalView" src="/assets/img/profile-image_1.png" alt="profile-image-i">
+        <img draggable="false" [class.show-image]="finalView" src="/assets/img/profile-image_1.png" alt="profile-image-i">
     </div>
 
     <span *ngIf="finalView" class="chevron">

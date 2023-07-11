@@ -1,20 +1,20 @@
 <app-navigation></app-navigation>
 
-<div class="wrapper">
+<div class="wrapper" #content>
 
-    <div class="title content">
+    <div class="title content" id="title" #titleDiv>
         <app-title></app-title>
     </div>
-    <div *ngIf="showAll" class="content" id="aboutMe">
+    <div *ngIf="showAll" class="content" id="aboutMe" #aboutMeDiv>
         <app-about-me></app-about-me>
     </div>
-    <div *ngIf="showAll" class="content" id="skills">
+    <div *ngIf="showAll" class="content" id="skills" #skillsDiv>
         <app-skills></app-skills>
     </div>
-    <div *ngIf="showAll" class="projects-content" id="projects">
+    <div *ngIf="showAll" class="projects-content" id="projects" #projectsDiv>
         <app-projects></app-projects>
     </div>
-    <div *ngIf="showAll" class="content" id="contact">
+    <div *ngIf="showAll" class="content" id="contact" #contactDiv>
         <app-contact></app-contact>
     </div>
 </div>
