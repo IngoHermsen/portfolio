@@ -8,6 +8,7 @@ import { ViewService } from 'src/app/core/services/view.service';
 })
 export class NavigationComponent {
   showThis: boolean = false;
+  active: string = '';
 
   constructor(
     public viewService: ViewService
@@ -16,6 +17,10 @@ export class NavigationComponent {
       console.log('show value', value);
           
       this.showThis = value;
+    })
+
+    this.viewService.activeSection.subscribe((sectionName) => {
+      this.active = sectionName;
     })
   }
 }

@@ -1,10 +1,11 @@
-.show { 
+.show {
     animation: show 1000ms forwards;
 
     @keyframes show {
         from {
             opacity: 0;
         }
+
         to {
             opacity: 1;
         }
@@ -24,11 +25,7 @@
     background-color: rgb(56, 55, 55);
     border-bottom: 1px solid rgba(255, 182, 51, 255);
 
-
-
- 
-
-    .left-container {
+    .name-logo {
         width: 250px;
     }
 
@@ -40,11 +37,18 @@
         height: 100%;
         background-color: rgb(56, 55, 55);
 
+        .active {
+              &:after{
+                width: 100%;
+            }  
+        }
+
 
         span {
             position: relative;
             font-weight: 500;
             text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.8);
+
 
             &::after {
                 content: '';
@@ -65,7 +69,7 @@
 
                     @keyframes underline {
                         from {
-                            width: 0%;
+                            width: 80%;
                         }
 
                         to {
@@ -85,11 +89,11 @@
         height: 100%;
         gap: 36px;
 
-        i { 
+        i {
             vertical-align: middle;
             color: white;
             font-size: 36px;
-            
+
             &:hover {
                 color: rgba(255, 182, 51, 255);
             }

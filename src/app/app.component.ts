@@ -11,7 +11,6 @@ import { map } from 'rxjs';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   viewElements: Array<any> = [];
-  currentViewIndex = 0;
   currentScrollYPosition = 0;
 
   @ViewChildren('titleDiv, aboutMeDiv, skillsDiv, projectsDiv, contactDiv')
@@ -32,12 +31,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   scrollDownProcedure() {
-    let nextViewElement = this.viewElements[this.currentViewIndex + 1]
+    let nextViewElement = this.viewElements[this.viewService.currentViewIndex + 1]
     const boundingRect = nextViewElement.nativeElement.getBoundingClientRect()
-    if (boundingRect.top <= window.innerHeight) {
+    if ((boundingRect.top-80)<= (window.innerHeight * 0.8)) {
       this.viewService.jumpToSection(nextViewElement.nativeElement.id);
 
-      this.currentViewIndex++;
+      this.viewService.currentViewIndex++;
     }
 
   }
@@ -45,29 +44,29 @@ export class AppComponent implements OnInit, AfterViewInit {
   scrollUpProcedure() {
     console.log('Scroll Up Procedure called');
 
-    let previousViewElement = this.viewElements[this.currentViewIndex - 1]
+    let previousViewElement = this.viewElements[this.viewService.currentViewIndex - 1]
     const boundingRect = previousViewElement.nativeElement.getBoundingClientRect()
 
     if (boundingRect.bottom >= (window.innerHeight * 0.99)) {
 
       this.viewService.jumpToSection(previousViewElement.nativeElement.id);
 
-      this.currentViewIndex--;
+      this.viewService.currentViewIndex--;
 
     }
 
   }
 
   notAtBottomEnd() {
-    console.log(this.currentViewIndex < this.viewElements.length - 1);
+    console.log(this.viewService.currentViewIndex < this.viewElements.length - 1);
 
-    return (this.currentViewIndex < this.viewElements.length - 1);
+    return (this.viewService.currentViewIndex < this.viewElements.length - 1);
   }
 
   notAtTopStart() {
-    console.log('this.currentViewIndex', this.currentViewIndex);
+    console.log('this.viewService.currentViewIndex', this.viewService.currentViewIndex);
 
-    return (this.currentViewIndex > 0);
+    return (this.viewService.currentViewIndex > 0);
   }
 
 

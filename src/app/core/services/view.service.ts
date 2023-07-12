@@ -7,7 +7,9 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ViewService implements AfterViewInit {
+  currentViewIndex = 0;
   introFinished: Subject<boolean> = new Subject;
+  activeSection: Subject<string> = new Subject;
 
   constructor(
   
@@ -19,12 +21,17 @@ export class ViewService implements AfterViewInit {
     
   }
 
-  public jumpToSection(name: string) {
+  public jumpToSection(name: string, viewIndex?: number) {
     this.router.navigate(['/main'], { fragment: name });
+    this.activeSection.next(name);
     this.scroller.scrollToAnchor(name);
+    
+    this.currentViewIndex = viewIndex ? viewIndex : this.currentViewIndex;
+    console.log(this.currentViewIndex);
+    
   }
 
-
+  
 
 
 }
