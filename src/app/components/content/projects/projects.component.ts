@@ -11,7 +11,7 @@ export class ProjectsComponent {
     {
       title: 'Join',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories',
+      description: 'Task manager inspired by the Kanban System. Create and organize tasks within projects using drag and drop. Assign users and categories',
       link: 'https://ingo-hermsen.developerakademie.net/join/main',
       githubLink: 'https://github.com/IngoHermsen/Join',
       jsDoc: false,
@@ -21,7 +21,7 @@ export class ProjectsComponent {
     {
       title: 'Slack Clone',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      description: 'Instant messaging service, based on "Slack".',
+      description: 'Instant messaging service based on "Slack". Includes main functions like channel managements and messaging in a thread based structure',
       link: 'https://ingo-hermsen.developerakademie.net/slack-clone/',
       githubLink: 'https://github.com/IngoHermsen/slack-clone/',
       jsDoc: false,
@@ -31,7 +31,7 @@ export class ProjectsComponent {
     {
       title: 'El Pollo Loco',
       usedTechs: ['Javascript', 'HTML', 'CSS'],
-      description: 'A simple Jump-and-Run-Game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale.',
+      description: 'A simple Jump-and-Run-Game based on an object-oriented approach. Help Pepe defending his village by throwing bottles on enemies.',
       link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,
@@ -41,7 +41,7 @@ export class ProjectsComponent {
 
     {
       title: 'Portfolio',
-      usedTechs: ['Angular', 'Typescript'],
+      usedTechs: ['Angular', 'Typescript', 'Material Design'],
       description: 'You are already using it. Thanks for reading that far',
       link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',

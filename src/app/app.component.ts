@@ -42,8 +42,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   scrollUpProcedure() {
-    console.log('Scroll Up Procedure called');
-
     let previousViewElement = this.viewElements[this.viewService.currentViewIndex - 1]
     const boundingRect = previousViewElement.nativeElement.getBoundingClientRect()
 
@@ -58,14 +56,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   notAtBottomEnd() {
-    console.log(this.viewService.currentViewIndex < this.viewElements.length - 1);
-
     return (this.viewService.currentViewIndex < this.viewElements.length - 1);
   }
 
   notAtTopStart() {
-    console.log('this.viewService.currentViewIndex', this.viewService.currentViewIndex);
-
     return (this.viewService.currentViewIndex > 0);
   }
 
@@ -110,14 +104,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.contentDivElements.changes
       .subscribe((elements: QueryList<any>) => {
         this.viewElements = elements.toArray();
-        console.log(this.viewElements, "view elements");
-
-
       })
-
   };
-
-
 }
 
 

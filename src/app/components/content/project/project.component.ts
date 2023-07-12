@@ -7,6 +7,7 @@ import { Project } from 'src/app/core/models/project';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
+  showOverlay: boolean = false;
 
   @Input() project: Project = new Project();
 

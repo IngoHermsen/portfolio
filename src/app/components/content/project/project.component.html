@@ -10,7 +10,12 @@
             </ng-container>
         </div>
     </div>
-    <div class="preview" data-aos="fade-down" data-aos-once="true">
-
+    <div (mouseover)="showOverlay = true" (mouseleave)="showOverlay = false" class="preview" data-aos="fade-down" data-aos-once="true">
+        <img src="/assets/img/{{ project.imagePath }}" alt="">
+        <div *ngIf="showOverlay" class="hover-overlay">
+            <a href="{{ project.link }}" target="_blank">Try Out</a>
+            <a href="{{ project.githubLink }}" target="_blank"><div></div>GitHub</a>
+            <a *ngIf="project.jsDoc" href="{{ project.jsDocLink }}" target="_blank">JsDoc</a>
+        </div>
     </div>
 </div>

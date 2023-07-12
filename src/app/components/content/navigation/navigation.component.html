@@ -1,5 +1,5 @@
 <div [class.show]="this.showThis" class="top-bar">
-    <div routerLink="/title" (click)="viewService.jumpToSection('title', 1)" [class.show]="this.viewService.currentViewIndex > 0"class="name-logo">
+    <div routerLink="/title" (click)="viewService.jumpToSection('title', 0)" [class.showLogo]="showLogo" class="name-logo">
         <span>I</span><span>ng</span><span>o</span>
         <span>&nbsp;Hermsen</span>
     </div>

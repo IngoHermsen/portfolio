@@ -12,6 +12,7 @@ import { ProjectComponent } from './components/content/project/project.component
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,6 +38,7 @@ import { NavigationComponent } from './components/content/navigation/navigation.
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
+    OverlayPanelModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

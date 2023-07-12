@@ -27,7 +27,6 @@ export class ViewService implements AfterViewInit {
     this.scroller.scrollToAnchor(name);
     
     this.currentViewIndex = viewIndex ? viewIndex : this.currentViewIndex;
-    console.log(this.currentViewIndex);
     
   }
 

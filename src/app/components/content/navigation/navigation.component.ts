@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -8,10 +9,12 @@ import { ViewService } from 'src/app/core/services/view.service';
 })
 export class NavigationComponent {
   showThis: boolean = false;
+  showLogo: boolean = false;
   active: string = '';
   titleVisible: boolean = true;
 
   constructor(
+    public router: Router,
     public viewService: ViewService
   ) {
     this.viewService.introFinished.subscribe((value) => {  
@@ -23,5 +26,13 @@ export class NavigationComponent {
     this.viewService.activeSection.subscribe((sectionName) => {
       this.active = sectionName;
     })
+
+    this.router.events.subscribe((events) => {
+      if(events instanceof NavigationEnd) {
+        this.showLogo = events.url != '/main#title' ? true : false;
+      }              
+    })
   }
+
+  
 }
