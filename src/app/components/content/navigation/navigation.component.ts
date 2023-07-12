@@ -9,6 +9,7 @@ import { ViewService } from 'src/app/core/services/view.service';
 export class NavigationComponent {
   showThis: boolean = false;
   active: string = '';
+  titleVisible: boolean = true;
 
   constructor(
     public viewService: ViewService

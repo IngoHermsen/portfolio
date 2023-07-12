@@ -1,7 +1,7 @@
 <div [class.show]="this.showThis" class="top-bar">
-    <div class="name-log">
-
-
+    <div routerLink="/title" (click)="viewService.jumpToSection('title', 1)" [class.show]="this.viewService.currentViewIndex > 0"class="name-logo">
+        <span>I</span><span>ng</span><span>o</span>
+        <span>&nbsp;Hermsen</span>
     </div>
     <nav>
         <span [class.active]="active == 'aboutMe'" routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe', 1)">about me</span>
