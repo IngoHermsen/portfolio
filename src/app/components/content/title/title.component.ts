@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ViewService } from 'src/app/core/services/view.service';
 
@@ -8,6 +8,8 @@ import { ViewService } from 'src/app/core/services/view.service';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit, AfterViewInit {
+  smallView: boolean = false;
+  hideTag: boolean = false;
   finalView: boolean = false;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
@@ -15,6 +17,12 @@ export class TitleComponent implements OnInit, AfterViewInit {
   @ViewChild('nameText') nameTextEl!: ElementRef;
   @ViewChild('titleTagOpen') titleTagOpenEl!: ElementRef;
   @ViewChild('jobTitleText') jobTitleTextEl!: ElementRef;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+   this.smallView = window.innerWidth <= 1300;
+   this.hideTag = window.innerWidth <= 1000;
+  }
 
   greeting = "Hello";
   iAmText = "I am";
@@ -44,6 +52,9 @@ export class TitleComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.smallView = window.innerWidth <= 1300;
+    this.hideTag = window.innerWidth <= 1000;
+
     setInterval(() => {
       this.cursorVisible = !this.cursorVisible;
     }, 450);

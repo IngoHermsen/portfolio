@@ -1,29 +1,34 @@
 <div class="wrapper">
-    <div class=title-text>
-        <div class="line-1 text">
-            <div class="h1-tag-open tag" #h1TagOpen></div>
-            <span class="greeting-text" #iAmText></span>
-            <span [hidden]="" class="name-text" #nameText></span>
-            <span [hidden]="firstLineFinished" [class.invisible]="cursorVisible" class="sim-cursor" #simCursor>|</span>
-            <div [hidden]="!h1TagFinished" class="h1-tag-close tag">&lt;/h1&gt;</div>
-        </div>
+    <div class="left-content">
+        <img *ngIf="smallView" class="small-avatar" src="/assets/img/profile-image_1_small.png" alt="small_profile_image">
+        <div class=title-text>
+            <div class="line-1 text">
+                <div [hidden]="hideTag" class="h1-tag-open tag" #h1TagOpen></div>
+                <span [hidden]="secondLineFinished && hideTag" class="greeting-text" #iAmText></span>
+                <span class="name-text" #nameText></span>
+                <span *ngIf="!firstLineFinished" [class.invisible]="cursorVisible" class="sim-cursor"
+                    #simCursor>|</span>
+                <div [hidden]="!h1TagFinished || hideTag" class="h1-tag-close tag">&lt;/h1&gt;</div>
+            </div>
 
-        <div class="line-2 text">
-            <div class="title-tag-open tag" #titleTagOpen></div>
-            <span class="job-title" #jobTitleText></span>
-            <span [hidden]="!firstLineFinished || secondLineFinished" [class.invisible]="cursorVisible"
-                class="sim-cursor" #simCursor>|</span>
-            <div [hidden]="!titleTagFinished" class="title-tag-close tag">&lt;title&gt;</div>
+            <div class="line-2 text">
+                <div [hidden]="hideTag" class="title-tag-open tag" #titleTagOpen></div>
+                <span class="job-title" #jobTitleText></span>
+                <span *ngIf="firstLineFinished && !secondLineFinished" [class.invisible]="cursorVisible"
+                    class="sim-cursor" #simCursor>|</span>
+                <div [hidden]="!titleTagFinished || hideTag" class="title-tag-close tag">&lt;title&gt;</div>
+            </div>
         </div>
-
     </div>
 
-    <div class="image">
-        <img draggable="false" [class.show-image]="finalView" src="/assets/img/profile-image_1.png" alt="profile-image-i">
+
+    <div *ngIf="!smallView" class="image">
+        <img draggable="false" [class.show-image]="finalView" src="/assets/img/profile-image_1.png"
+            alt="profile-image-1">
     </div>
 
     <span *ngIf="finalView" class="chevron">
         <i routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe')" class="pi pi-chevron-down"></i>
     </span>
-    <div *ngIf="titleTagFinished" class="side-block"></div>
+    <div *ngIf="titleTagFinished && !smallView" class="side-block"></div>
 </div>
