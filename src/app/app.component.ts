@@ -11,6 +11,7 @@ import { map } from 'rxjs';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   viewElements: Array<any> = [];
+  showNavOverlay: boolean = true;
   currentScrollYPosition = 0;
 
   @ViewChildren('titleDiv, aboutMeDiv, skillsDiv, projectsDiv, contactDiv')
@@ -78,12 +79,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
-
-
   showAll: boolean = false;
   overflowScroll: boolean = false;
-
-
 
   constructor(
     public elementRef: ElementRef,
@@ -93,6 +90,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.overflowScroll = value;
       this.showAll = value == true ? true : false;
 
+    })
+
+    this.viewService.showNavOverlay.subscribe((value) => {
+      this.showNavOverlay = value;
     })
   }
 

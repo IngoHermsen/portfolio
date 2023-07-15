@@ -32,7 +32,9 @@
         @keyframes showLogo {
             from {
                 opacity: 0;
-            } to {
+            }
+
+            to {
                 opacity: 1;
             }
         }
@@ -47,7 +49,7 @@
         width: 250px;
 
 
-       
+
         &:hover {
             cursor: pointer;
         }
@@ -58,57 +60,17 @@
 
     }
 
-    nav {
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        padding-right: 40px;
-        gap: 24px;
-        height: 100%;
-        background-color: rgb(56, 55, 55);
-
-        .active {
-            &:after {
-                width: 100%;
-            }
-        }
-
-
+    .middle-area {
         span {
-            position: relative;
-            font-weight: 500;
-            text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
 
-
-            &::after {
-                content: '';
-                position: absolute;
-                width: 0px;
-                height: 2px;
-                bottom: -4px;
-                left: 0px;
-                background-color: rgba(255, 182, 51, 255);
-
-            }
-
-            &:hover {
+            i { 
                 cursor: pointer;
-
-                &:after {
-                    animation: underline 130ms forwards;
-
-                    @keyframes underline {
-                        from {
-                            width: 80%;
-                        }
-
-                        to {
-                            width: 100%;
-                        }
-                    }
-                }
+                margin-left: 12px;
             }
         }
+
     }
 
     .public-media-links {

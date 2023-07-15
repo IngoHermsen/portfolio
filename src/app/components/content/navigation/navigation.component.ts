@@ -10,7 +10,7 @@ import { ViewService } from 'src/app/core/services/view.service';
 export class NavigationComponent {
   showThis: boolean = false;
   showLogo: boolean = false;
-  active: string = '';
+  showTopNavLinks: boolean = false;
   titleVisible: boolean = true;
 
   constructor(
@@ -23,15 +23,18 @@ export class NavigationComponent {
       this.showThis = value;
     })
 
-    this.viewService.activeSection.subscribe((sectionName) => {
-      this.active = sectionName;
-    })
+    this.showTopNavLinks = window.innerWidth >= 1000 ? true : false;
 
     this.router.events.subscribe((events) => {
       if(events instanceof NavigationEnd) {
         this.showLogo = events.url != '/main#title' ? true : false;
       }              
     })
+  }
+
+  toggleOverlayMenu() {
+    const navOverlayIsOpened: boolean = this.viewService.showNavOverlay.getValue()
+    this.viewService.showNavOverlay.next(!navOverlayIsOpened)
   }
 
   

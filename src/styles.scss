@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-}
+}   
 
 body {
     position: relative;
@@ -14,6 +14,7 @@ body {
     background-color: rgb(56, 55, 55);
     margin: 0px;
     font-family: 'Poppins';
+
 }
 
 ::-webkit-scrollbar {
@@ -58,5 +59,45 @@ textarea {
     width: 100%;
     height: 150px;
     resize: vertical;
+}
+
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.8);
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 2px;
+        bottom: -4px;
+        left: 0px;
+        background-color: rgba(255, 182, 51, 255);
+
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        &:after {
+            animation: underline 130ms forwards;
+
+            @keyframes underline {
+                from {
+                    width: 80%;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.hide-overflow-y {
+    overflow: hidden;
 }
 

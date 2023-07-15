@@ -1,15 +1,12 @@
 
 .wrapper {
-    height: 100vh;
+    position: relative;
 }
 
-.hidden {
-    display: none;
-}
 
 .content {
     padding-top: 80px;
-    height: 100%;
+    height: 100vh;
 }
 
 .projects-content {
@@ -18,6 +15,29 @@
 
 .component {
     height: calc(100vh);
+}
+
+.nav-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0 , 0.8);
+
+    i { position: absolute;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+        position: absolute;
+    };
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
 }
 
 

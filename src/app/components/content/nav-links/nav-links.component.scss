@@ -1,0 +1,18 @@
+nav {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+    gap: 24px;
+    height: 100%;
+    background-color: rgb(56, 55, 55);
+
+    .active {
+        &:after {
+            width: 100%;
+        }
+    }
+
+
+}
+
