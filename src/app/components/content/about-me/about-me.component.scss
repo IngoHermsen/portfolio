@@ -95,13 +95,17 @@
 }
 
 @media only screen and (max-width: 1400px) {
-    article {
-        margin-right: 100px;
+    .text-area {
+        margin-top: 24px;
+        padding: 0px 60px 0px 0px;
     }
 }
 
-@media only screen and (max-width: 1000px) {
-    article {
-        margin-right: 100px;
+
+@media only screen and (max-width: 850px) {
+    .about-me-text {
+        padding: 0px 60px;
     }
 }
+
+

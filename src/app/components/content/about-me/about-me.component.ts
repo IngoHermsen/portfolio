@@ -8,9 +8,14 @@ import { fromEvent } from 'rxjs';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit, AfterViewInit {
-
-
   swingImgAnimation: boolean = false;
+  showImageArea: boolean = true;
+
+  
+@HostListener('window:resize', ['$event'])
+onResize() {
+  this.showImageArea = window.innerWidth <= 850 ? false : true;
+}
 
 
   constructor() {
@@ -19,6 +24,7 @@ export class AboutMeComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     AOS.init();
+    this.showImageArea = window.innerWidth <= 850 ? false : true;
   }
 
   ngAfterViewInit(): void {
