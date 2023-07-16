@@ -1,17 +1,16 @@
-
 .wrapper {
     position: relative;
 }
 
-
-.content {
+.only-vh-content {
     padding-top: 80px;
     height: 100vh;
 }
 
-.projects-content {
+.scroll-content {
     padding-top: 80px;
 }
+
 
 .component {
     height: calc(100vh);
@@ -24,21 +23,39 @@
     align-items: center;
     inset: 0;
     z-index: 2;
-    background-color: rgba(0, 0, 0 , 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 
-    i { position: absolute;
-        top: 12px;
-        right: 12px;
-        cursor: pointer;
+    i {
         position: absolute;
-    };
+        top: 16px;
+        right: 16px;
+        position: absolute;
+
+        &:hover {
+            cursor: pointer;
+            color: rgba(255, 182, 51, 255);
+        }
+    }
+
+    ;
 
     nav {
         display: flex;
         flex-direction: column;
         gap: 28px;
     }
+
 }
 
+@media only screen and (max-width: 650px) {
 
+
+        .only-vh-content {
+            padding-top: 60px;
+        }
+        
+        .scroll-content {
+            padding-top: 60px;
+        }
+    }
 

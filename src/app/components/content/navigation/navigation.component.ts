@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { ViewService } from 'src/app/core/services/view.service';
 
@@ -11,7 +11,17 @@ export class NavigationComponent {
   showThis: boolean = false;
   showLogo: boolean = false;
   showTopNavLinks: boolean = false;
+  showOverlayToggleText: boolean = true;
   titleVisible: boolean = true;
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.showTopNavLinks = window.innerWidth >= 1000 ? true : false;
+    this.showOverlayToggleText = window.innerWidth <= 390 ? true : false ;
+  }
+
+  
+
 
   constructor(
     public router: Router,
@@ -19,11 +29,11 @@ export class NavigationComponent {
   ) {
     this.viewService.introFinished.subscribe((value) => {  
       console.log('show value', value);
-          
+
+      this.showTopNavLinks = window.innerWidth >= 1000 ? true : false;
       this.showThis = value;
     })
 
-    this.showTopNavLinks = window.innerWidth >= 1000 ? true : false;
 
     this.router.events.subscribe((events) => {
       if(events instanceof NavigationEnd) {

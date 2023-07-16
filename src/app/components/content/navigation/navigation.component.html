@@ -1,14 +1,14 @@
 <div [class.show]="this.showThis" class="top-bar">
-    <div routerLink="/title" (click)="viewService.jumpToSection('title', 0)" [class.showLogo]="showLogo" class="name-logo">
+    <div routerLink="/title" (click)="viewService.jumpToSection('title', 0)" [class.showLogo]="showLogo"
+        class="name-logo">
         <span>I</span><span>ng</span><span>o</span>
         <span>&nbsp;Hermsen</span>
     </div>
     <div class="middle-area">
         <app-nav-links *ngIf="showTopNavLinks"></app-nav-links>
-        <div *ngIf="!showTopNavLinks">
-            <span (click)="viewService.toggleOverlayMenu()">Menu
-                <i class="pi pi-chevron-circle-down" style="font-size: 2rem"></i>
-            </span>
+        <div *ngIf="!showTopNavLinks" class="overlay-toggle" (click)="viewService.toggleOverlayMenu()">
+            <span *ngIf="showOverlayToggleText">Menu</span>
+            <i class="pi pi-chevron-circle-down" style="font-size: 2rem"></i>
         </div>
     </div>
     <div class="public-media-links">
