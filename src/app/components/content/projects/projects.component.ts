@@ -26,7 +26,7 @@ export class ProjectsComponent {
       githubLink: 'https://github.com/IngoHermsen/slack-clone/',
       jsDoc: false,
       jsDocLink: '',
-      imagePath: 'preview_pokedex.png'
+      imagePath: 'preview_slack-clone.png'
     },
     {
       title: 'El Pollo Loco',
@@ -47,7 +47,7 @@ export class ProjectsComponent {
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,
       jsDocLink: 'https://ingo-hermsen.developerakademie.net/elpolloloco/out/',
-      imagePath: 'preview_elpolloloco.png'
+      imagePath: 'preview_portfolio.png'
     }
 
   ];

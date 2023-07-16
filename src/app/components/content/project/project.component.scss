@@ -32,7 +32,7 @@
 
     .preview {
         position: relative;
-        width: 300px;
+        min-width: 300px;
         height: 250px;
         border: 1px solid rgba(255, 182, 51, 255);
 
@@ -83,5 +83,23 @@
             }
         }
     }
+}
 
+@media only screen and (max-width: 1000px) {
+    .card {
+        max-width: 400px;
+        flex-direction: column;
+        gap: 24px;
+        
+        .description {
+            gap: 24px;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .card {
+        margin: 0px 20px;
+    }
 }
