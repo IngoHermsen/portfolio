@@ -18,6 +18,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './components/content/navigation/navigation.component';
 import { NavLinksComponent } from './components/content/nav-links/nav-links.component';
+import { PublicMediaLinksComponent } from './components/content/public-media-links/public-media-links.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { NavLinksComponent } from './components/content/nav-links/nav-links.comp
     ProjectComponent,
     NavigationComponent,
     NavLinksComponent,
+    PublicMediaLinksComponent,
   ],
   imports: [
     BrowserModule,

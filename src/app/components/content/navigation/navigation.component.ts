@@ -20,7 +20,6 @@ export class NavigationComponent {
     this.showOverlayToggleText = window.innerWidth <= 390 ? true : false ;
   }
 
-  
 
 
   constructor(
