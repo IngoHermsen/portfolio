@@ -20,8 +20,6 @@
             border-radius: 100%;
         }
 
-
-
         .round-avatar {
             align-self: center;
             min-height: 360px;
@@ -116,7 +114,7 @@
             position: absolute;
             opacity: 0;
             top: 0px;
-            right: 0px;
+            right: 120px;
             bottom: 0px;
             height: 100%;
             z-index: 1;
@@ -186,10 +184,19 @@
     }
 }
 
+@media only screen and (max-width: 1700px) {
+    .wrapper {
+        .image {
+            img {
+                right: 0px;
+            }
+        }
+    }
+
+}
 
 @media only screen and (max-width: 1450px) {
     .wrapper {
-
         .tag {
             font-size: 3rem;
         }
@@ -199,13 +206,6 @@
 
 @media only screen and (max-width: 1412px) {
     .wrapper {
-        .text {
-            span {
-                // font-size: 3.5rem;
-            }
-        }
-
-
         .image {
             img {
                 top: unset;
