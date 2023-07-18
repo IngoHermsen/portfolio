@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 24px;
+
+    i {
+        vertical-align: middle;
+        color: white;
+        font-size: 36px;
+        border: 2px solid transparent;
+    }
+
+    img {
+        vertical-align: middle;
+        max-height: 38px;
+    }
+
+    i, img {
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+

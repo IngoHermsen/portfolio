@@ -10,11 +10,13 @@ import { fromEvent } from 'rxjs';
 export class AboutMeComponent implements OnInit, AfterViewInit {
   swingImgAnimation: boolean = false;
   showImageArea: boolean = true;
+  showPublicMediaLinks: boolean = false;
 
   
 @HostListener('window:resize', ['$event'])
 onResize() {
   this.showImageArea = window.innerWidth <= 850 ? false : true;
+  this.showPublicMediaLinks = window.innerWidth <= 650 ? true : false
 }
 
 
@@ -25,6 +27,7 @@ onResize() {
   ngOnInit(): void {
     AOS.init();
     this.showImageArea = window.innerWidth <= 850 ? false : true;
+    this.showPublicMediaLinks = window.innerWidth <= 650 ? true : false
   }
 
   ngAfterViewInit(): void {
