@@ -3,11 +3,10 @@
 }
 
 .only-vh-content {
-    padding-top: 80px;
     height: 100vh;
 }
 
-.scroll-content {
+.only-vh-content, .scroll-content {
     padding-top: 80px;
 }
 
