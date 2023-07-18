@@ -216,6 +216,20 @@
     }
 }
 
+
+@media only screen and (max-width: 1300px) {
+    .wrapper {
+        padding-top: 40px;
+        .left-content {
+            .title-text {
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1000px) {
     .wrapper {
         margin-left: unset;

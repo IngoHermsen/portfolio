@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './components/content/navigation/navigation.component';
 import { NavLinksComponent } from './components/content/nav-links/nav-links.component';
 import { PublicMediaLinksComponent } from './components/content/public-media-links/public-media-links.component';
+import { FooterComponent } from './components/content/footer/footer.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { PublicMediaLinksComponent } from './components/content/public-media-lin
     NavigationComponent,
     NavLinksComponent,
     PublicMediaLinksComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
