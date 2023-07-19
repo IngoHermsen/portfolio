@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .policy-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            cursor: pointer;
+        }
+    }
+}

@@ -20,6 +20,8 @@ import { NavigationComponent } from './components/content/navigation/navigation.
 import { NavLinksComponent } from './components/content/nav-links/nav-links.component';
 import { PublicMediaLinksComponent } from './components/content/public-media-links/public-media-links.component';
 import { FooterComponent } from './components/content/footer/footer.component';
+import { LegalNoticeComponent } from './components/policy/legal-notice/legal-notice.component';
+import { DataProtectionComponent } from './components/policy/data-protection/data-protection.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { FooterComponent } from './components/content/footer/footer.component';
     NavLinksComponent,
     PublicMediaLinksComponent,
     FooterComponent,
+    LegalNoticeComponent,
+    DataProtectionComponent,
   ],
   imports: [
     BrowserModule,
