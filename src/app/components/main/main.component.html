@@ -1,0 +1,31 @@
+<div class="wrapper" #content>
+    <app-navigation></app-navigation>
+
+    <div *ngIf="showNavOverlay" class="nav-overlay">
+        <i (click)="viewService.toggleOverlayMenu()" class="pi pi-times" style="font-size: 2rem"></i>
+        <nav>
+            <span class="nav-link" routerLink="/aboutme"  (click)="viewService.jumpToSection('aboutMe', 1, 'closeOverlay')">about me</span>
+            <span class="nav-link" routerLink="/skills" (click)="viewService.jumpToSection('skills', 2, 'closeOverlay')">skills</span>
+            <span class="nav-link" routerLink="/projects" (click)="viewService.jumpToSection('projects', 3, 'closeOverlay')">projects</span>
+            <span class="nav-link" routerLink="/contact" (click)="viewService.jumpToSection('contact', 4, 'closeOverlay')">contact</span>
+     </nav>        
+    </div>
+    <div class="title-content" id="title" #titleDiv>
+        <app-title></app-title>
+    </div>
+    <div *ngIf="showAll" class="only-vh-content" id="aboutMe" #aboutMeDiv>
+        <app-about-me></app-about-me>
+    </div>
+    <div *ngIf="showAll" class="only-vh-content" id="skills" #skillsDiv>
+        <app-skills></app-skills>
+    </div>
+    <div *ngIf="showAll" class="scroll-content" id="projects" #projectsDiv>
+        <app-projects></app-projects>
+    </div>
+    <div *ngIf="showAll" class="only-vh-content" id="contact" #contactDiv>
+        <app-contact></app-contact>
+    </div>
+    <div *ngIf="showAll">
+        <app-footer></app-footer>
+    </div>
+</div>

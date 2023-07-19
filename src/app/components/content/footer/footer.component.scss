@@ -2,14 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80px;
 
     .policy-links {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        gap: 24px;
 
-        span {
-            cursor: pointer;
+        a {
+            &:hover {
+                font-weight: 500;
+            }
         }
+
     }
 }

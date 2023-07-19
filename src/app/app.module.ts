@@ -22,6 +22,7 @@ import { PublicMediaLinksComponent } from './components/content/public-media-lin
 import { FooterComponent } from './components/content/footer/footer.component';
 import { LegalNoticeComponent } from './components/policy/legal-notice/legal-notice.component';
 import { DataProtectionComponent } from './components/policy/data-protection/data-protection.component';
+import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DataProtectionComponent } from './components/policy/data-protection/dat
     FooterComponent,
     LegalNoticeComponent,
     DataProtectionComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,

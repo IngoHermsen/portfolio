@@ -27,8 +27,6 @@ export class NavigationComponent {
     public viewService: ViewService
   ) {
     this.viewService.introFinished.subscribe((value) => {  
-      console.log('show value', value);
-
       this.showTopNavLinks = window.innerWidth >= 1000 ? true : false;
       this.showThis = value;
     })

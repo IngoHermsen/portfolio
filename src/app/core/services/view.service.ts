@@ -39,13 +39,10 @@ export class ViewService implements AfterViewInit {
   toggleOverlayMenu(value?: boolean) {
     const navOverlayIsOpened: boolean = this.showNavOverlay.getValue();
     const bodyTag = document.getElementsByTagName('body')[0];
-    console.log('body-tag', bodyTag);
     
     this.showNavOverlay.next(value || !navOverlayIsOpened)
 
-    if(!navOverlayIsOpened) {
-      console.log(!navOverlayIsOpened);
-      
+    if(!navOverlayIsOpened) {      
       bodyTag.classList.add('hide-overflow-y');
     } else {
       bodyTag.classList.remove('hide-overflow-y')

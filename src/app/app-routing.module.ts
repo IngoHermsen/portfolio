@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { LegalNoticeComponent } from './components/policy/legal-notice/legal-notice.component';
 import { DataProtectionComponent } from './components/policy/data-protection/data-protection.component';
+import { MainComponent } from './components/main/main.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -13,7 +13,7 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   { path: '', redirectTo: '/main#title', pathMatch: 'full' },
-  { path: 'main', component: AppComponent },
+  { path: 'main', component: MainComponent },
   { path: 'legal-notice', component: LegalNoticeComponent },
   { path: 'data-protection', component: DataProtectionComponent }
 ];
