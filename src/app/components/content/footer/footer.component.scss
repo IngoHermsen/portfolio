@@ -10,7 +10,9 @@
         align-items: center;
         gap: 24px;
 
-        a {
+        a { 
+            min-width: 102px;
+            
             &:hover {
                 font-weight: 500;
             }

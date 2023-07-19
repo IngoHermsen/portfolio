@@ -10,7 +10,7 @@
     </div>
 
 
-    <form action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true">
+    <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true" (ngSubmit)="submitForm()">
         <span class=" p-float-label">
             <input formControlName="name" pInputText id="name">
             <label htmlFor="name">name</label>
@@ -32,7 +32,7 @@
             <label htmlFor="message">message</label>
         </span>
 
-        <p-button class="button" label="Submit"></p-button>
+        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Submit"></p-button>
     </form>
 
 </div>

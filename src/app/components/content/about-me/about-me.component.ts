@@ -38,7 +38,6 @@ onResize() {
 
     document.addEventListener('aos:out', ({ }) => {
       this.swingImgAnimation = false;
-      console.log(this.swingImgAnimation, 'aaa');
       
     });
 
