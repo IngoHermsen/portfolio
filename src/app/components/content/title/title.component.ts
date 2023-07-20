@@ -11,6 +11,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   smallView: boolean = false;
   hideTag: boolean = false;
   finalView: boolean = false;
+  actualDateHours: number = 0;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
@@ -27,7 +28,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   greeting = "Hello";
   iAmText = "I am";
   nameText = "Ingo Hermsen"
-  jobTitle = "Frontend Developer";
+  jobTitle = "Frontend Developer.";
 
   h1TagOpen = "<h1>";
   h1TagClose = "</h1>";
@@ -54,6 +55,10 @@ export class TitleComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.smallView = window.innerWidth <= 1300;
     this.hideTag = window.innerWidth <= 1000;
+    let date = new Date();
+    this.greeting = this.getDaytimeGreeting();
+    console.log('today:', date.getHours());
+    
 
     setInterval(() => {
       this.cursorVisible = !this.cursorVisible;
@@ -70,6 +75,19 @@ export class TitleComponent implements OnInit, AfterViewInit {
         case this.jobTitle: this.finishSecondLine(); break;
       }
     })
+  }
+
+  getDaytimeGreeting() {
+    let date = new Date();
+    let hours = date.getHours();    
+    
+    if (hours <= 12) {
+      return "Good morning."
+    } else if (hours <= 18) {
+      return "Good afternoon."
+    } else {
+      return "Good evening."
+    }
   }
 
   ngAfterViewInit(): void {

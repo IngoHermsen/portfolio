@@ -46,8 +46,7 @@ export class ContactComponent {
     formData.append('message', this.formGroup.value.message || '');
     formData.append('email', this.formGroup.value.email || '');
 
-    
-    fetch('https://ingo-hermsen.developerakademie.net/_sendphp/send_mail.php',
+    fetch('https://www.ingo-hermsen.de/_sendphp/send_mail.php',
       {
         method: 'POST',
         body: formData
