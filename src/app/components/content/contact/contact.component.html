@@ -10,7 +10,8 @@
     </div>
 
 
-    <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true" (ngSubmit)="submitForm()">
+    <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true"
+        (ngSubmit)="submitForm()">
         <span class=" p-float-label">
             <input formControlName="name" pInputText id="name">
             <label htmlFor="name">name</label>
@@ -32,7 +33,15 @@
             <label htmlFor="message">message</label>
         </span>
 
-        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Submit"></p-button>
+        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Send Message" styleClass="p-button-raised p-button-text p-button-warning w-full"></p-button>
+        <div *ngIf="mailSent" class="mail-sent-overlay">
+            <div class="overlay-content">
+                <h3>Thank you very much!</h3>
+                <div>Your message has been sent.</div>
+                <div>I will respond as soon as possible.</div>
+            </div>
+
+        </div>
     </form>
 
 </div>

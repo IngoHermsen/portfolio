@@ -6,7 +6,7 @@
 
 html {
     scroll-behavior: smooth;
-}   
+}
 
 body {
     position: relative;
@@ -19,11 +19,11 @@ body {
 
 ::-webkit-scrollbar {
     width: 8px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: white;  
+    background-color: white;
 }
 
 h1 {
@@ -37,7 +37,7 @@ h1 {
         height: 4px;
         bottom: -12px;
         left: 0px;
-        background-color:rgba(255, 182, 51, 255) ;
+        background-color: rgba(255, 182, 51, 255);
     }
 }
 
@@ -50,6 +50,18 @@ article {
     margin-top: 24px;
     max-width: 650px;
 }
+
+button {
+    padding: 12px 0px;
+    color: white;
+    font-size: 1rem;
+    border-color:  rgba(255, 182, 51, 255);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 
 p-button {
     width: 100%;
@@ -89,6 +101,7 @@ textarea {
                 from {
                     width: 80%;
                 }
+
                 to {
                     width: 100%;
                 }
@@ -100,4 +113,3 @@ textarea {
 .hide-overflow-y {
     overflow: hidden;
 }
-

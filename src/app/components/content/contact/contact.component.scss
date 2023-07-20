@@ -9,6 +9,7 @@
 }
 
 form {
+    position: relative;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -20,6 +21,23 @@ form {
 
         input {
             width: 100%;
+        }
+    }
+
+    .mail-sent-overlay {
+        position: absolute;
+        inset: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+
+        .overlay-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
         }
     }
 }

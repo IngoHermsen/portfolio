@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { isFormControl } from '@angular/forms';
+import { AbstractControl, isFormControl } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Validators } from '@angular/forms';
@@ -10,6 +10,21 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  constructor() {
+    Object.values(this.formGroup.controls).forEach(control => {
+      this.watchFormControlValue(control);
+    })
+  }
+
+  watchFormControlValue(control: AbstractControl) {
+    control.valueChanges.subscribe((controlValue) => {
+      if (control.dirty && controlValue === '') {
+        control.markAsPristine();
+      }
+    })
+  }
+
+
   mailSent: boolean = false;
   value: string = '';
 
@@ -34,6 +49,7 @@ export class ContactComponent {
   })
 
   submitForm() {
+    this.formGroup.disable()
     this.sendMail()
   }
 
@@ -51,15 +67,18 @@ export class ContactComponent {
         method: 'POST',
         body: formData
       }
-    )
+    ).then((response) => {
+      this.formGroup.reset()
+      this.showMailSentMessage()
 
-    this.showMailSentMessage()
+    })
 
   }
 
   showMailSentMessage() {
     this.mailSent = true;
     let mailSentTimeout = setTimeout(() => {
+      this.formGroup.enable();
       this.mailSent = false;
       clearTimeout(mailSentTimeout);
     }, 3000)
