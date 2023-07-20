@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { AbstractControl, isFormControl } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +10,8 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  @Output() showGithubLink: boolean = false;
+
   constructor() {
     Object.values(this.formGroup.controls).forEach(control => {
       this.watchFormControlValue(control);

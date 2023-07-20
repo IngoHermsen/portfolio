@@ -62,11 +62,6 @@ button {
     }
 }
 
-
-p-button {
-    width: 100%;
-}
-
 textarea {
     width: 100%;
     height: 150px;
@@ -95,11 +90,11 @@ textarea {
         cursor: pointer;
 
         &:after {
-            animation: underline 130ms forwards;
+            animation: underline 175ms forwards;
 
             @keyframes underline {
                 from {
-                    width: 80%;
+                    width: 0%;
                 }
 
                 to {
