@@ -2,14 +2,18 @@
     display: flex;
     height: 100%;
     width: 100%;
-    max-width: 1200px;
     justify-content: space-between;
     align-items: center;
     overflow-x: hidden;
-    margin: 0px auto;
+    // margin: 0px auto;
 
     div {
         width: 100%;
+    }
+
+    .about-me-text {
+        margin-left: 40px;
+
     }
 
     .image-area {
@@ -96,25 +100,64 @@
     .public-media-links {
         margin-top: 56px;
     }
+
+    .side-space {
+        svg {
+            padding: 0px 0px 0px 40px;
+        }
+    }
+
 }
 
 
 @media only screen and (max-width: 1400px) {
     .about-me-text {
-        padding: 0px 60px 0px 0px;
+        padding: 0px 20px 0px 0px;
     }
 }
 
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1220px) {
+
+    .side-space {
+        width: unset;
+    }
+
+    .side-space:nth-of-type(1) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
     .about-me-text {
-        padding: 0px 60px;
+        padding: 0px 60px 0px 0px;
+    }
+
+    .side-space {
+        display: none;
     }
 }
 
 
 @media only screen and (max-width: 680px) {
-    .about-me-text {
-        padding: 0px 20px;
+    .content {
+        .about-me-text {
+            padding: 0px 20px;
+            margin-left: 0px;
+        }
+
     }
+
+}
+
+@media only screen and (max-width: 430px) {
+    .content {
+        .about-me-text {
+            .public-media-links {
+                margin-top: 16px;
+            }
+        }
+
+    }
+
 }

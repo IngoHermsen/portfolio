@@ -108,3 +108,17 @@ textarea {
 .hide-overflow-y {
     overflow: hidden;
 }
+
+
+.side-space {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    margin: 0px;
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

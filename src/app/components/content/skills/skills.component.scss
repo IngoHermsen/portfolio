@@ -2,8 +2,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    margin: 0px auto;
-    max-width: 1200px;
 
 
     .icons {
@@ -28,11 +26,18 @@
     .area {
         width: 100%;
     }
+
+    .side-space {
+        svg {
+            padding: 0px 40px 0px 0px;
+        }
+    }
 }
 
 @media only screen and (max-width: 1300px) {
     .content {
-        margin: 0px 24px;
+
+        // margin: 0px 24px;
         .icons {
             padding-left: 80px;
         }
@@ -40,30 +45,45 @@
 
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1160px) {
     .content {
-        flex-direction: column;
         justify-content: center;
-        margin: 0px auto;
-        gap: 56px;
-        max-width: 750px;
-
+        gap: 36px;
 
         .icons {
             padding-left: unset;
+        }
+
+        .side-space {
+            svg {
+                padding: unset;
+            }
+        }
+
+
+        .right {
+            display: none;
         }
     }
 
 }
 
+// @media only screen and (max-width: 950p)
+
 @media only screen and (max-width: 850px) {
     .content {
         margin: 0px 40px;
+
+        .side-space {
+            display: none;
+        }
     }
 }
 
-@media only screen and (max-width: 650px) {
-
+@media only screen and (max-width: 750px) {
+    .content {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 530px) {
@@ -77,6 +97,7 @@
                 width: 60px;
                 font-size: 12px;
                 gap: 4px;
+
                 img {
                     max-width: 40px;
                 }

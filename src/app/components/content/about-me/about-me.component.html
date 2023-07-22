@@ -1,4 +1,5 @@
 <div class="content">
+    <div class="side-space"></div>
     <div *ngIf="showImageArea" class="image-area" data-aos-id="image" data-aos="fade-right" #imageArea>
         <div class="image border"></div>
         <div [class.swing-animation]="swingImgAnimation" class="image image-content" #imageContent>
@@ -10,12 +11,15 @@
     <div class="about-me-text" data-aos="fade-left">
         <h1>About me</h1>
         <div class="text-area">
-            I am a 39 years old Web Developer living in Weeze (North Rhine Westphalia) with experience in building web apps with
+            I am a 39 years old Web Developer living in Weeze (North Rhine Westphalia) with experience in building web
+            apps with
             JavaScript & Angular.<br>
             Always fascinated by the possibilities of modern web development I decided to turn my first knowledge of
             coding into the ability of creating professional web-based applications.<br>
-            I reached this goal during my time at the Developer Akademie this year by using common coding practices and techniques
-            in many practical exercises and projects, which have been approved by experienced mentors. My coding skills have improved significantly over the past few months thanks to this continuous process of
+            I reached this goal during my time at the Developer Akademie this year by using common coding practices and
+            techniques
+            in many practical exercises and projects, which have been approved by experienced mentors. My coding skills
+            have improved significantly over the past few months thanks to this continuous process of
             absorbing new knowledge from various projects.
             <br><br>
             I invite you to take a look at my selection of responsive websites and apps I created.
@@ -24,5 +28,10 @@
             <app-public-media-links></app-public-media-links>
         </div>
     </div>
-
+    <div class="side-space">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"
+            style="width: 100%; height: 100%;">
+            <polygon points="100,0 100,100 0,50" fill="#ffb633" />
+        </svg>
+    </div>
 </div>
