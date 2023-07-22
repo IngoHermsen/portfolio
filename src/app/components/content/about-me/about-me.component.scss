@@ -109,6 +109,18 @@
 
 }
 
+@media only screen and (max-width: 1500px) {
+    .content {
+        .side-space.left {
+            display: none;
+        }
+
+        .side-space.right {
+            max-width: 300px;
+        }
+    }
+
+}
 
 @media only screen and (max-width: 1400px) {
     .about-me-text {
@@ -120,12 +132,9 @@
 @media only screen and (max-width: 1220px) {
 
     .side-space {
-        width: unset;
-    }
-
-    .side-space:nth-of-type(1) {
         display: none;
     }
+
 }
 
 @media only screen and (max-width: 1000px) {
