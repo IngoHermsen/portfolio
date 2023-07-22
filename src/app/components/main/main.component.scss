@@ -36,8 +36,6 @@
         }
     }
 
-    ;
-
     nav {
         display: flex;
         flex-direction: column;
@@ -50,6 +48,11 @@
 
         .only-vh-content {
             padding-top: 60px;
+        }
+
+        .contact {
+            height: unset !important;
+            min-height: 100vh;
         }
         
         .scroll-content {
