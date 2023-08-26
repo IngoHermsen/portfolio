@@ -1,5 +1,6 @@
 .wrapper {
     position: relative;
+    width: 100%;
 }
 
 .only-vh-content {
@@ -12,7 +13,7 @@
 
 
 .component {
-    height: calc(100vh);
+    // height: calc(100vh);
 }
 
 .nav-overlay {

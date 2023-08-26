@@ -12,6 +12,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   hideTag: boolean = false;
   finalView: boolean = false;
   actualDateHours: number = 0;
+  hideIAmText: boolean = false;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
@@ -25,8 +26,8 @@ export class TitleComponent implements OnInit, AfterViewInit {
    this.hideTag = window.innerWidth <= 1000;
   }
 
-  greeting = "Hello";
-  iAmText = "I am";
+  greeting = "";
+  iAmText = "Ich bin";
   nameText = "Ingo Hermsen"
   jobTitle = "Frontend Developer.";
 
@@ -68,7 +69,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
       switch (value) {
         case this.h1TagOpen: this.finishH1Tag(); break;
         case this.greeting: this.deleteGreeting(); break;
-        case 'greetingDeleted': this.typeStrings(this.iAmText, this.iAmTextEl); break;
+        case 'greetingDeleted': this.typeStrings(this.iAmText, this.iAmTextEl, true); break;
         case this.iAmText: this.typeStrings(this.nameText, this.nameTextEl); break;
         case this.nameText: this.finishFirstLine(); break;
         case this.titleTagOpen: this.finishTitleTag(); break;
@@ -81,12 +82,12 @@ export class TitleComponent implements OnInit, AfterViewInit {
     let date = new Date();
     let hours = date.getHours();    
     
-    if (hours <= 12) {
-      return "Good morning."
-    } else if (hours <= 18) {
-      return "Good afternoon."
+    if (hours <= 11) {
+      return "Guten Morgen."
+    } else if (hours <= 17) {
+      return "Guten Tag."
     } else {
-      return "Good evening."
+      return "Guten Abend."
     }
   }
 
@@ -95,7 +96,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   }
 
-  typeStrings(string: string, targetElement: ElementRef) {
+  typeStrings(string: string, targetElement: ElementRef, isIAmText?: boolean) {
     let processedCharacters: number = 0;
 
     Array.from(string).forEach((character, index) => {
@@ -103,9 +104,15 @@ export class TitleComponent implements OnInit, AfterViewInit {
         targetElement.nativeElement.innerHTML += character;
         processedCharacters++;
 
-        switch (processedCharacters) {
-          case string.length: this.typeState.next(string); break;
-        };
+        if(processedCharacters == string.length) {
+          if(isIAmText) {
+            this.checkIfHideIAmText()
+          }
+          console.log('string length', string, " length: ", string.length);
+          
+          this.typeState.next(string);
+
+        } 
         
       }, index * 90)
     })
@@ -151,4 +158,8 @@ export class TitleComponent implements OnInit, AfterViewInit {
     this.viewService.introFinished.next(true);
   }
 
+  checkIfHideIAmText() {
+
+    this.hideIAmText = window.innerWidth <= 420;
+  }
 }

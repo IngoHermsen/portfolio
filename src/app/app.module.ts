@@ -14,6 +14,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { TooltipModule } from 'primeng/tooltip';
+import { CarouselModule } from 'primeng/carousel';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavigationComponent } from './components/content/navigation/navigation.component';
@@ -51,7 +52,8 @@ import { MainComponent } from './components/main/main.component';
     ReactiveFormsModule,
     ButtonModule,
     OverlayPanelModule,
-    TooltipModule
+    TooltipModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
