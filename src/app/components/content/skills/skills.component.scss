@@ -15,16 +15,29 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            opacity: 0.4;
+            border-radius: 25%;
 
             .name {
                 text-align: center;
                 word-wrap: break-word;
             }
         }
+
+        .highlight {
+            opacity: 1;
+        }
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 
     .area {
         width: 100%;
+
     }
 
     .side-space {

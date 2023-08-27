@@ -1,0 +1,55 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    .carousel-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        min-height: 150px;
+
+        i {
+            font-size: 32px;
+
+            &:hover {
+                cursor: pointer;
+                color: rgb(255, 182, 51);
+            }
+        }
+
+
+        .content {
+            width: 100%;
+        }
+
+
+    }
+
+    .indicators {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+
+        .indicator {
+            width: 40px;
+            height: 8px;
+            background-color: white;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .active {
+            background-color: rgb(255, 182, 51);
+        }
+    }
+
+    .current-view {
+        display: flex;
+
+    }
+}

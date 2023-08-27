@@ -24,6 +24,7 @@ import { FooterComponent } from './components/content/footer/footer.component';
 import { LegalNoticeComponent } from './components/policy/legal-notice/legal-notice.component';
 import { DataProtectionComponent } from './components/policy/data-protection/data-protection.component';
 import { MainComponent } from './components/main/main.component';
+import { SkillCarouselComponent } from './components/content/skill-carousel/skill-carousel.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { MainComponent } from './components/main/main.component';
     LegalNoticeComponent,
     DataProtectionComponent,
     MainComponent,
+    SkillCarouselComponent,
   ],
   imports: [
     BrowserModule,

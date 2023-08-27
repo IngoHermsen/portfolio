@@ -8,18 +8,14 @@
     <div class="text area" data-aos="fade-right">
         <div class="text">
             <h1>Skills</h1>
-            <article>
-                In several coding projects, I adapted given design guidelines that
-                have been created with Figma.<br>
-
-                While learning how to code, I experienced how to develop software projects in a collaborative team by
-                using Github.
-            </article>
+            <div class="article">
+                <app-skill-carousel (changeActiveSkills)="setHighlightedSkills($event)"></app-skill-carousel>
+            </div>
         </div>
     </div>
     <div class="icons area">
         <ng-container *ngFor="let skill of skills, index as i">
-            <div class="skill" data-aos="zoom-in">
+            <div class="skill" data-aos="zoom-in" [class.highlight]="skill.highlight">
                 <img class="icon" src="./assets/icons/{{ skill.fileName }}" alt="">
                 <div class="name">{{ skill.name }}</div>
             </div>
