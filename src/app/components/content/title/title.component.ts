@@ -13,6 +13,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   finalView: boolean = false;
   actualDateHours: number = 0;
   hideIAmText: boolean = false;
+  introSkipped: boolean = false;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
@@ -100,6 +101,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
     let processedCharacters: number = 0;
 
     Array.from(string).forEach((character, index) => {
+      let timer = this.introSkipped ? 0 : index * 90
       setTimeout(() => {
         targetElement.nativeElement.innerHTML += character;
         processedCharacters++;
@@ -114,7 +116,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
         } 
         
-      }, index * 90)
+      }, timer)
     })
   }
 
@@ -141,8 +143,8 @@ export class TitleComponent implements OnInit, AfterViewInit {
           clearInterval(interval);
           this.typeState.next('greetingDeleted')
         }
-      }, 75)
-    }, 1200)
+      }, this.setSpeed(75, 0))
+    }, this.setSpeed(1200, 0))
 
   }
 
@@ -150,7 +152,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
     this.firstLineFinished = true;
     setTimeout(() => {
       this.typeStrings(this.titleTagOpen, this.titleTagOpenEl);
-    }, 600)
+    }, this.setSpeed(600, 300))
   }
 
   finishSecondLine() {
@@ -161,5 +163,13 @@ export class TitleComponent implements OnInit, AfterViewInit {
   checkIfHideIAmText() {
 
     this.hideIAmText = window.innerWidth <= 420;
+  }
+
+  skipIntro() {
+    this.introSkipped = true;
+  }
+
+  setSpeed(normalSpeed: number, fastSpeed: number) {
+    return this.introSkipped ? fastSpeed : normalSpeed
   }
 }

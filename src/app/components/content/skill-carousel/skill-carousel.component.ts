@@ -15,20 +15,20 @@ export class SkillCarouselComponent implements OnInit {
     this.skillArticles = [
       {
         text: 'text 1',
-        skills: ['Angular', 'Typescript', 'GIT', ]
+        skills: ['HTML', 'CSS', 'Angular', 'Typescript', 'GIT' ]
  
       },
       {
         text: 'text 2',
-        skills: ['Firebase', 'GIT']
+        skills: ['HTML', 'CSS', 'Firebase', 'GIT', 'Javascript']
       },
       {
         text: 'text 3',
-        skills: ['Rest-Api', 'Scrum']
+        skills: ['HTML', 'CSS', 'Rest-Api', 'Scrum']
       },
       {
         text: 'text 4',
-        skills: ['Angular', 'Typescript', 'Material Design']
+        skills: ['HTML', 'CSS', 'Angular', 'Typescript', 'Material Design']
       }
     ]
     this.emitActiveSkills()

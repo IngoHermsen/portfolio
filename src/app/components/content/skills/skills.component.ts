@@ -7,7 +7,7 @@ import { Skill } from 'src/app/core/models/skill';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-  highlightSkills: string[] = []
+  highlightedSkills: string[] = []
 
   skills: Skill[] = [
     { name: 'Angular', fileName: 'angular.png', highlight: false },
@@ -27,12 +27,12 @@ export class SkillsComponent implements OnInit {
   }
 
   setHighlightedSkills(emitValue: any) {
-    this.highlightSkills = emitValue;
+    this.highlightedSkills = emitValue;
     this.skills.forEach(skill => {
       skill.highlight = false
     })
 
-    this.highlightSkills.forEach(skillName => {
+    this.highlightedSkills.forEach(skillName => {
       this.skills.map(skill => {
         if (skill.name == skillName) {
           skill.highlight = true;
