@@ -157,6 +157,10 @@
         }
     }
 
+    .hidden {
+        display: none;
+    }
+
     .pointdown-animation {
 
         animation: pointdown 2s forwards;

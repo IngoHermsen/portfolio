@@ -13,22 +13,25 @@ export class SkillCarouselComponent implements OnInit {
 
   ngOnInit(): void {
     this.skillArticles = [
-      {
-        text: 'text 1',
-        skills: ['HTML', 'CSS', 'Angular', 'Typescript', 'GIT' ]
- 
+      { 
+        headline: 'Teamwork',
+        text: 'Erfahrung in Gruppenarbeit und Grundkenntnisse von agilen Methoden.',
+        skills: ['HTML', 'CSS', 'JavaScript', 'GIT', 'Scrum']
       },
-      {
-        text: 'text 2',
-        skills: ['HTML', 'CSS', 'Firebase', 'GIT', 'Javascript']
+      { 
+        headline: 'Benutzerfreundliche Oberfläche',
+        text: 'Umsetzung responsiver Applikationen, auch mit Hilfe von CSS-Frameworks und UI-Libraries.',
+        skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Material Design']
       },
-      {
-        text: 'text 3',
-        skills: ['HTML', 'CSS', 'Rest-Api', 'Scrum']
+      { 
+        headline: 'Asynchrone Programmierung',
+        text: 'Einbindung von Daten z.B. aus Schnittstellen oder Datenbanken.',
+        skills: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Rest-Api']
       },
-      {
-        text: 'text 4',
-        skills: ['HTML', 'CSS', 'Angular', 'Typescript', 'Material Design']
+      { 
+        headline: 'Komplexe Anwendungen',
+        text: 'Erstellen komplexer Applikationen unter Verwendung eines JS-Frameworks.',
+        skills: ['HTML', 'CSS', 'Angular', 'TypeScript', 'Firebase']
       }
     ]
     this.emitActiveSkills()

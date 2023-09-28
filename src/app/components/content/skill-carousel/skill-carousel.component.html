@@ -1,8 +1,11 @@
 <div class="carousel">
     <div class="carousel-content">
-        <i (click)="goToArticle(activeIndex -1)" class="pi pi-chevron-circle-left"></i>
-        <div class="content">{{ skillArticles[activeIndex].text }}</div>
-        <i (click)="goToArticle(activeIndex + 1)" class="pi pi-chevron-circle-right"></i>
+        <i (click)="goToArticle(activeIndex -1)" class="pi pi-chevron-left"></i>
+        <div class="content-wrapper">
+            <h3 class="headline">{{ skillArticles[activeIndex].headline }}</h3>
+            <div class="content">{{ skillArticles[activeIndex].text }}</div>
+        </div>
+        <i (click)="goToArticle(activeIndex + 1)" class="pi pi-chevron-right"></i>
     </div>
     <div class="indicators">
         <ng-container *ngFor="let article of skillArticles; index as i">

@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    gap: 24px;
+
 
     .carousel-content {
         display: flex;
@@ -20,11 +22,12 @@
             }
         }
 
+        .content-wrapper {
 
-        .content {
-            width: 100%;
+            .content {
+                width: 100%;
+            }
         }
-
 
     }
 

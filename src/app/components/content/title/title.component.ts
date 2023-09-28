@@ -167,6 +167,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   skipIntro() {
     this.introSkipped = true;
+    
   }
 
   setSpeed(normalSpeed: number, fastSpeed: number) {

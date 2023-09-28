@@ -11,8 +11,8 @@ export class SkillsComponent implements OnInit {
 
   skills: Skill[] = [
     { name: 'Angular', fileName: 'angular.png', highlight: false },
-    { name: 'Typescript', fileName: 'typescript.png', highlight: false },
-    { name: 'Javascript', fileName: 'javascript.png', highlight: false },
+    { name: 'TypeScript', fileName: 'typescript.png', highlight: false },
+    { name: 'JavaScript', fileName: 'javascript.png', highlight: false },
     { name: 'HTML', fileName: 'html.png', highlight: false },
     { name: 'Firebase', fileName: 'firebase.png', highlight: false },
     { name: 'GIT', fileName: 'git.png', highlight: false },
