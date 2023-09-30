@@ -69,26 +69,23 @@
     .content {
         justify-content: center;
         gap: 36px;
+        margin-left: 40px;
+        margin-right: 40px;
+
+        .text {
+            margin-bottom: 80px;
+        }
 
         .icons {
             padding-left: unset;
         }
 
         .side-space {
-            svg {
-                padding: unset;
-            }
-        }
-
-
-        .side-space.right {
             display: none;
         }
     }
 
 }
-
-// @media only screen and (max-width: 950p)
 
 @media only screen and (max-width: 850px) {
     .content {
@@ -103,6 +100,11 @@
 @media only screen and (max-width: 750px) {
     .content {
         flex-direction: column;
+
+
+        .text {
+            margin-bottom: unset;
+        }
     }
 }
 

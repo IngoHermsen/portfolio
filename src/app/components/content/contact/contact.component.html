@@ -1,13 +1,16 @@
 <div class="content" data-aos="fade-right" data-aos-once="true">
     <div class="text">
-        <h1>Contact me</h1>
+        <h1>Kontakt</h1>
         <article>
-          If you are interested in getting to know me, a highly motivated and open minded web developer for your team, feel free to contact me.<br>
-          I am looking forward to reading your message and will respond in short notice, regardless of whether you are using the contact form or prefer another way:
+            Sollten Sie Interesse an einem hoch motivierten Entwickler für Ihr Team haben, der offen ist für spannende
+            Projekte und neue Technologien:
+            <br><br>
+            Ich freue mich auf Ihre Nachricht.
         </article>
         <div class="media-links">
             <app-public-media-links [showGithub]="showGithubLink"></app-public-media-links>
         </div>
+ 
     </div>
 
 
@@ -15,31 +18,33 @@
         (ngSubmit)="submitForm()">
         <span class=" p-float-label">
             <input formControlName="name" pInputText id="name">
-            <label htmlFor="name">name</label>
+            <label htmlFor="name">Name</label>
         </span>
         <span class=" p-float-label">
             <input formControlName="email" pInputText id="mail">
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">Email</label>
         </span>
         <span class=" p-float-label">
             <input formControlName="company" pInputText id="company">
-            <label htmlFor="company">company (optional)</label>
+            <label htmlFor="company">Unternehmen (optional)</label>
         </span>
         <span class=" p-float-label">
             <input formControlName="website" pInputText id="website">
-            <label htmlFor="website">website (optional)</label>
+            <label htmlFor="website">Website (optional)</label>
         </span>
         <span class=" p-float-label">
             <textarea formControlName="message" pInputTextarea id="message"></textarea>
-            <label htmlFor="message">message</label>
+            <label htmlFor="message">Nachricht</label>
         </span>
 
-        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Send Message" styleClass="p-button-raised p-button-text p-button-warning w-full"></p-button>
+        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Senden"
+            styleClass="p-button-raised p-button-text p-button-warning w-full"></p-button>
         <div *ngIf="mailSent" class="mail-sent-overlay">
             <div class="overlay-content">
-                <h3>Thank you very much!</h3>
-                <div>Your message has been sent.</div>
-                <div>I will respond as soon as possible.</div>
+                <h3>Vielen Dank!</h3>
+                <div>Ihre Nachricht wurde gesendet.</div>
+                <div>Sie erhalten schnellstmöglich <br>
+                    eine Antwort.</div>
             </div>
 
         </div>

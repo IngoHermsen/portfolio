@@ -5,23 +5,13 @@
     justify-content: space-between;
     align-items: center;
     overflow-x: hidden;
-    // margin: 0px auto;
-
-    div {
-        width: 100%;
-    }
-
-    .about-me-text {
-        margin-left: 40px;
-
-    }
+    gap: 60px;
 
     .image-area {
         position: relative;
         display: flex;
         z-index: 0;
         align-items: center;
-        justify-content: center;
 
         div {
             width: 300px;
@@ -101,7 +91,16 @@
         margin-top: 56px;
     }
 
+    .side-space.left {
+        max-width: 150px;
+    }
+
+    .side-space.right {
+        max-width: 300px;
+    }
+
     .side-space {
+
         svg {
             padding: 0px 0px 0px 40px;
         }
@@ -111,9 +110,6 @@
 
 @media only screen and (max-width: 1500px) {
     .content {
-        .side-space.left {
-            display: none;
-        }
 
         .side-space.right {
             max-width: 300px;
@@ -130,6 +126,11 @@
 
 
 @media only screen and (max-width: 1220px) {
+    .content {
+        padding-left: 80px;
+        padding-right: 40px;
+
+    }
 
     .side-space {
         display: none;
@@ -139,6 +140,7 @@
 
 @media only screen and (max-width: 1000px) {
     .about-me-text {
+        font-size: 14px;
         padding: 0px 60px 0px 0px;
     }
 
@@ -147,16 +149,44 @@
     }
 }
 
+@media only screen and (max-width: 850px) {
+    .content {
+        padding-left: 24px;
+        padding-right: 24px;
+
+
+        .about-me-text {
+            font-size: 16px;
+        }
+    }
+
+}
+
 
 @media only screen and (max-width: 680px) {
     .content {
         .about-me-text {
             padding: 0px 20px;
             margin-left: 0px;
+
+            .text-area {
+                max-height: 300px;
+                overflow-y: scroll;
+            }
+
         }
 
     }
+}
 
+@media only screen and (max-width: 550px) {
+    .content {
+        .about-me-text {
+            .text-area {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 430px) {

@@ -9,45 +9,45 @@ import { Project } from 'src/app/core/models/project';
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Join',
+      title: 'Projekt Management | JOIN',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks within projects using drag and drop. Assign users and categories',
+      description: 'Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip durch Personenzuweisung und Statusanpassung per Drag & Drop.',
       link: 'https://ingo-hermsen.developerakademie.net/join/main',
       githubLink: 'https://github.com/IngoHermsen/Join',
       jsDoc: false,
       jsDocLink: '',
-      imagePath: 'preview_join.png'
+      imagePath: 'join_xl.png'
     },
     {
-      title: 'Slack Clone',
+      title: 'Instant-Messaging | SLACK-CLONE',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      description: 'Instant messaging service based on "Slack". Includes main functions like channel managements and messaging in a thread based structure',
+      description: 'Nach dem Vorbild von "Slack". Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit Firebase Datenbank.',
       link: 'https://ingo-hermsen.developerakademie.net/slack-clone/',
       githubLink: 'https://github.com/IngoHermsen/slack-clone/',
       jsDoc: false,
       jsDocLink: '',
-      imagePath: 'preview_slack-clone.png'
+      imagePath: 'slack-clone_xl.png'
     },
     {
-      title: 'El Pollo Loco',
+      title: 'Jump-and-Run Game | EL POLLO LOCO',
       usedTechs: ['Javascript', 'HTML', 'CSS'],
-      description: 'A simple Jump-and-Run-Game based on an object-oriented approach. Help Pepe defending his village by throwing bottles on enemies.',
+      description: 'Einfaches Jump-And-Run-Projekt mit objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.',
       link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,
       jsDocLink: 'https://ingo-hermsen.developerakademie.net/elpolloloco/out/',
-      imagePath: 'preview_elpolloloco.png'
+      imagePath: 'elPolloLoco_xl.png'
     },
 
     {
-      title: 'Portfolio',
+      title: 'Portfolio | ingo-hermsen.de',
       usedTechs: ['Angular', 'Typescript', 'Material Design'],
-      description: 'You are already using it. Thanks for reading that far',
-      link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
-      githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
-      jsDoc: true,
-      jsDocLink: 'https://ingo-hermsen.developerakademie.net/elpolloloco/out/',
-      imagePath: 'preview_portfolio.png'
+      description: 'Eine persönliche Vorstellung meiner Fähigkeiten und Ambitionen als Frontendentwickler.',
+      link: 'https://www.ingo-hermsen.de',
+      githubLink: 'https://github.com/IngoHermsen/portfolio',
+      jsDoc: false,
+      jsDocLink: '',
+      imagePath: 'portfolio_xl.png'
     }
 
   ];
