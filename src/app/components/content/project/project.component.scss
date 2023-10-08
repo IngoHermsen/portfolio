@@ -135,5 +135,21 @@
 @media only screen and (max-width: 450px) {
     .card {
         margin: 0px 20px;
+        padding: unset;
+        align-items: center;
+
+        .description {
+            padding: unset;
+
+            .techs {
+                justify-content: center;
+            }
+        }
+
+        .preview {
+            min-width: unset;
+            max-width: 300px;
+            height: 180px;
+        }
     }
 }
