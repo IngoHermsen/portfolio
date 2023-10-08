@@ -43,6 +43,7 @@
     }
 
     .area {
+        min-width: 590px;
         width: 100%;
 
     }
@@ -78,6 +79,11 @@
 
         .icons {
             padding-left: unset;
+
+        }
+
+        .area {
+            min-width: unset;
         }
 
         .side-space {
