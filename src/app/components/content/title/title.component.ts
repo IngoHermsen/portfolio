@@ -23,8 +23,8 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-   this.smallView = window.innerWidth <= 1300;
-   this.hideTag = window.innerWidth <= 1000;
+    this.smallView = window.innerWidth <= 1300;
+    this.hideTag = window.innerWidth <= 1000;
   }
 
   greeting = "";
@@ -57,10 +57,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.smallView = window.innerWidth <= 1300;
     this.hideTag = window.innerWidth <= 1000;
-    let date = new Date();
     this.greeting = this.getDaytimeGreeting();
-    console.log('today:', date.getHours());
-    
 
     setInterval(() => {
       this.cursorVisible = !this.cursorVisible;
@@ -81,8 +78,8 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   getDaytimeGreeting() {
     let date = new Date();
-    let hours = date.getHours();    
-    
+    let hours = date.getHours();
+
     if (hours <= 11) {
       return "Guten Morgen."
     } else if (hours <= 17) {
@@ -106,16 +103,13 @@ export class TitleComponent implements OnInit, AfterViewInit {
         targetElement.nativeElement.innerHTML += character;
         processedCharacters++;
 
-        if(processedCharacters == string.length) {
-          if(isIAmText) {
+        if (processedCharacters == string.length) {
+          if (isIAmText) {
             this.checkIfHideIAmText()
           }
-          console.log('string length', string, " length: ", string.length);
-          
-          this.typeState.next(string);
 
-        } 
-        
+          this.typeState.next(string);
+        }
       }, timer)
     })
   }
@@ -156,7 +150,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   }
 
   finishSecondLine() {
-    this.secondLineFinished = true;      
+    this.secondLineFinished = true;
     this.viewService.introFinished.next(true);
   }
 
@@ -167,7 +161,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   skipIntro() {
     this.introSkipped = true;
-    
+
   }
 
   setSpeed(normalSpeed: number, fastSpeed: number) {

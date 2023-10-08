@@ -9,9 +9,10 @@ import { Project } from 'src/app/core/models/project';
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Projekt Management | JOIN',
+      type: 'Projekt Management',
+      title: 'JOIN',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      description: 'Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip durch Personenzuweisung und Statusanpassung per Drag & Drop.',
+      description: 'Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Statusanpassung per Drag & Drop.',
       link: 'https://ingo-hermsen.developerakademie.net/join/main',
       githubLink: 'https://github.com/IngoHermsen/Join',
       jsDoc: false,
@@ -19,7 +20,8 @@ export class ProjectsComponent {
       imagePath: 'join_xl.png'
     },
     {
-      title: 'Instant-Messaging | SLACK-CLONE',
+      type: 'Instant-Messaging',
+      title: 'SLACK-CLONE',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
       description: 'Nach dem Vorbild von "Slack". Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit Firebase Datenbank.',
       link: 'https://ingo-hermsen.developerakademie.net/slack-clone/',
@@ -29,9 +31,10 @@ export class ProjectsComponent {
       imagePath: 'slack-clone_xl.png'
     },
     {
-      title: 'Jump-and-Run Game | EL POLLO LOCO',
+      type: 'Browsergame',
+      title: 'EL POLLO LOCO',
       usedTechs: ['Javascript', 'HTML', 'CSS'],
-      description: 'Einfaches Jump-And-Run-Projekt mit objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.',
+      description: 'Jump-And-Run Game mit Fokus auf objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.',
       link: 'https://ingo-hermsen.developerakademie.net/elpolloloco/',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,
@@ -40,7 +43,8 @@ export class ProjectsComponent {
     },
 
     {
-      title: 'Portfolio | ingo-hermsen.de',
+      type: 'Portfolio',
+      title: 'ingo-hermsen.de',
       usedTechs: ['Angular', 'Typescript', 'Material Design'],
       description: 'Eine persönliche Vorstellung meiner Fähigkeiten und Ambitionen als Frontendentwickler.',
       link: 'https://www.ingo-hermsen.de',
@@ -49,6 +53,5 @@ export class ProjectsComponent {
       jsDocLink: '',
       imagePath: 'portfolio_xl.png'
     }
-
   ];
 }

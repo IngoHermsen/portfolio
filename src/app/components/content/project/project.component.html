@@ -1,7 +1,11 @@
 <div class="card">
     <div class="description" data-aos="fade-up" data-aos-once="true">
         <div class="text">
-            <h2>{{ project.title }}</h2>
+            <div class="title">
+                <h2 class="type">{{ project.type }}</h2>
+                <h2 class="pipe">|</h2>
+                <h2>{{ project.title }}</h2>
+            </div>
             <div>{{ project.description }}</div>
         </div>
         <div class="techs">
@@ -10,11 +14,14 @@
             </ng-container>
         </div>
     </div>
-    <div (click)="showOverlay = true" (mouseover)="showOverlay = true" (mouseleave)="showOverlay = false" class="preview" data-aos="fade-down" data-aos-once="true">
+    <div (click)="showOverlay = true" (mouseover)="showOverlay = true" (mouseleave)="showOverlay = false"
+        class="preview" data-aos="fade-down" data-aos-once="true">
         <img src="/assets/img/project-previews/{{ project.imagePath }}" alt="">
         <div *ngIf="showOverlay" class="hover-overlay">
             <a href="{{ project.link }}" target="_blank">Try Out</a>
-            <a href="{{ project.githubLink }}" target="_blank"><div></div>GitHub</a>
+            <a href="{{ project.githubLink }}" target="_blank">
+                <div></div>GitHub
+            </a>
             <a *ngIf="project.jsDoc" href="{{ project.jsDocLink }}" target="_blank">JsDoc</a>
         </div>
     </div>
