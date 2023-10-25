@@ -17,7 +17,7 @@
     <div (click)="showOverlay = true" (mouseover)="showOverlay = true" (mouseleave)="showOverlay = false"
         class="preview" data-aos="fade-down" data-aos-once="true">
         <img src="/assets/img/project-previews/{{ project.imagePath }}" alt="">
-        <div [class.is-hidden]="!showOverlay" class="hover-overlay">
+        <div *ngIf="showOverlay" class="hover-overlay">
             <a href="{{ project.link }}" target="_blank">Try Out</a>
             <a href="{{ project.githubLink }}" target="_blank">
                 <div></div>GitHub
