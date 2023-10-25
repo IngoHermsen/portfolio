@@ -9,10 +9,10 @@ import { Project } from 'src/app/core/models/project';
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      type: 'Projekt Management',
+      type: 'Project Management',
       title: 'JOIN',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      description: 'Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Statusanpassung per Drag & Drop.',
+      description: 'Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Nutzerbasierte Projekte und Statusanpassung per Drag & Drop.',
       link: 'https://join.ingo-hermsen.de',
       githubLink: 'https://github.com/IngoHermsen/Join-ext',
       jsDoc: false,

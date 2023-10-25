@@ -78,9 +78,6 @@
             animation: opacity 220ms forwards;
 
             @keyframes opacity {
-                from {
-                    opacity: 0;
-                }
                 to {
                     opacity: 1;
                 }
