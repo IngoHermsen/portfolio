@@ -25,12 +25,12 @@ export class SkillCarouselComponent implements OnInit {
       },
       { 
         headline: 'Asynchrone Programmierung',
-        text: 'Einbindung von Daten z.B. aus Schnittstellen oder Datenbanken.',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Rest-Api']
+        text: 'Zugriff auf Datenbanken und Rest-Api unter Verwendung von asynchronen Methoden und RXJS-Konzepten.',
+        skills: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Rest-Api', 'Angular']
       },
       { 
         headline: 'Komplexe Anwendungen',
-        text: 'Erstellen komplexer Applikationen unter Verwendung eines JS-Frameworks.',
+        text: 'Sehr guter Umgang mit den Anforderungen aufwändiger Applikationen unter Verwendung eines JS-Frameworks.',
         skills: ['HTML', 'CSS', 'Angular', 'TypeScript', 'Firebase']
       }
     ]

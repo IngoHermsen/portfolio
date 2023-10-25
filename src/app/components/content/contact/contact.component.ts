@@ -73,6 +73,9 @@ export class ContactComponent {
       this.formGroup.reset()
       this.showMailSentMessage()
 
+    }).catch(error => {
+      console.log(error);
+      
     })
 
   }
