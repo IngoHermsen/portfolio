@@ -9,7 +9,7 @@ import { Project } from 'src/app/core/models/project';
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      type: 'Project Management',
+      type: 'Projekt-Management',
       title: 'JOIN',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
       description: 'Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Nutzerbasierte Projekte und Statusanpassung per Drag & Drop.',
