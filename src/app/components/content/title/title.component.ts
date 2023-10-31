@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, Subscription, timeInterval } from 'rxjs';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -13,7 +13,15 @@ export class TitleComponent implements OnInit, AfterViewInit {
   finalView: boolean = false;
   actualDateHours: number = 0;
   hideIAmText: boolean = false;
-  introSkipped: boolean = false;
+
+  // Timers:
+  typingInterval: any;
+  cursorInterval: any;
+  timeout: any;
+
+  // Subscriptions:
+  typingSubscription!: Subscription;
+
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
@@ -59,11 +67,11 @@ export class TitleComponent implements OnInit, AfterViewInit {
     this.hideTag = window.innerWidth <= 1000;
     this.greeting = this.getDaytimeGreeting();
 
-    setInterval(() => {
+    this.cursorInterval = setInterval(() => {
       this.cursorVisible = !this.cursorVisible;
     }, 450);
 
-    this.typeState.subscribe((value) => {
+    this.typingSubscription = this.typeState.subscribe((value) => {
       switch (value) {
         case this.h1TagOpen: this.finishH1Tag(); break;
         case this.greeting: this.deleteGreeting(); break;
@@ -95,27 +103,26 @@ export class TitleComponent implements OnInit, AfterViewInit {
   }
 
   typeStrings(string: string, targetElement: ElementRef, isIAmText?: boolean) {
-    let processedCharacters: number = 0;
-
-    Array.from(string).forEach((character, index) => {
-      let timer = this.introSkipped ? 0 : index * 90
-      setTimeout(() => {
-        targetElement.nativeElement.innerHTML += character;
-        processedCharacters++;
-
-        if (processedCharacters == string.length) {
+    let processedCharacter: number = 0;
+   
+      this.typingInterval = setInterval(() => {
+        targetElement.nativeElement.innerHTML += string.charAt(processedCharacter);
+        processedCharacter++;
+        
+        if (processedCharacter == string.length) {
           if (isIAmText) {
             this.checkIfHideIAmText()
           }
-
+          clearInterval(this.typingInterval);
           this.typeState.next(string);
         }
-      }, timer)
-    })
+      }, 120)
+    
   }
 
   finishH1Tag() {
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
+      clearTimeout(this.timeout)
       this.h1TagFinished = true;
       this.typeStrings(this.greeting, this.iAmTextEl);
     }, 150)
@@ -128,25 +135,27 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   deleteGreeting() {
     let remainingLength: number = this.greeting.length;
-    setTimeout(() => {
-      let interval = setInterval(() => {
+    this.timeout = setTimeout(() => {
+      clearTimeout(this.timeout)
+      this.typingInterval = setInterval(() => {
         if (remainingLength > 0) {
           remainingLength--;
           this.iAmTextEl.nativeElement.innerHTML = this.greeting.slice(0, remainingLength)
         } else {
-          clearInterval(interval);
+          clearInterval(this.typingInterval);
           this.typeState.next('greetingDeleted')
         }
-      }, this.setSpeed(75, 0))
-    }, this.setSpeed(1200, 0))
+      }, 75)
+    }, 1200)
 
   }
 
   finishFirstLine() {
     this.firstLineFinished = true;
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
+      clearTimeout(this.timeout);
       this.typeStrings(this.titleTagOpen, this.titleTagOpenEl);
-    }, this.setSpeed(600, 300))
+    }, 600)
   }
 
   finishSecondLine() {
@@ -159,12 +168,31 @@ export class TitleComponent implements OnInit, AfterViewInit {
     this.hideIAmText = window.innerWidth <= 420;
   }
 
-  skipIntro() {
-    this.introSkipped = true;
+  skipIntro() {        
+    clearTimeout(this.timeout);
+    clearInterval(this.typingInterval);
+    clearInterval(this.cursorInterval);
+    this.typingSubscription.unsubscribe();
 
+    this.setFinalState();
+    this.viewService.introFinished.next(true);
   }
 
-  setSpeed(normalSpeed: number, fastSpeed: number) {
-    return this.introSkipped ? fastSpeed : normalSpeed
+  setFinalState() {
+    this.h1TagOpenEl.nativeElement.innerText = this.h1TagOpen;
+
+    this.iAmTextEl.nativeElement.innerText = this.iAmText;
+    this.nameTextEl.nativeElement.innerText = this.nameText;
+    this.titleTagOpenEl.nativeElement.innerText = this.titleTagOpen;
+    this.jobTitleTextEl.nativeElement.innerText = this.jobTitle;
+  
+    this.cursorVisible = false;
+    this.h1TagFinished = true;
+    this.titleTagFinished = true;
+    this.firstLineFinished = true;
+    this.secondLineFinished = true;
+    this.finalView = true;
+
+    
   }
 }
