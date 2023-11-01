@@ -24,8 +24,8 @@ export class ProjectsComponent {
       title: 'SLACK-CLONE',
       usedTechs: ['Angular', 'Typescript', 'Firebase'],
       description: 'Nach dem Vorbild von "Slack". Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit Firebase Datenbank.',
-      link: 'https://im-clone.ingo-hermsen.de',
-      githubLink: 'https://github.com/IngoHermsen/slack-clone/',
+      link: 'https://slackclone.ingo-hermsen.de',
+      githubLink: 'https://github.com/IngoHermsen/slack-clone/tree/finalEdits',
       jsDoc: false,
       jsDocLink: '',
       imagePath: 'slack-clone_xl.png'
@@ -38,7 +38,7 @@ export class ProjectsComponent {
       link: 'https://elpolloloco.ingo-hermsen.de',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,
-      jsDocLink: 'https://ingo-hermsen.developerakademie.net/elpolloloco/out/',
+      jsDocLink: 'https://elpolloloco.ingo-hermsen.de/jsdoc_out/index.html',
       imagePath: 'elPolloLoco_xl.png'
     },
 
