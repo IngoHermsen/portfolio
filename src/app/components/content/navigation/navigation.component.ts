@@ -34,7 +34,7 @@ export class NavigationComponent {
 
     this.router.events.subscribe((events) => {
       if(events instanceof NavigationEnd) {
-        this.showLogo = events.url != '/main#title' ? true : false;
+        this.showLogo = events.url != '/app#title' ? true : false;
       }              
     })
   }

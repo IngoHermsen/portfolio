@@ -34,7 +34,7 @@ export class ProjectsComponent {
       type: 'Browsergame',
       title: 'EL POLLO LOCO',
       usedTechs: ['Javascript', 'HTML', 'CSS'],
-      description: 'Jump-And-Run Game mit Fokus auf objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.',
+      description: 'Prototyp eines Jump-And-Run Game mit Fokus auf objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.',
       link: 'https://elpolloloco.ingo-hermsen.de',
       githubLink: 'https://github.com/IngoHermsen/elPolloLoco/',
       jsDoc: true,

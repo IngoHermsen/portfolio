@@ -116,7 +116,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
           clearInterval(this.typingInterval);
           this.typeState.next(string);
         }
-      }, 120)
+      },70)
     
   }
 
@@ -145,7 +145,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
           clearInterval(this.typingInterval);
           this.typeState.next('greetingDeleted')
         }
-      }, 75)
+      }, 70)
     }, 1200)
 
   }

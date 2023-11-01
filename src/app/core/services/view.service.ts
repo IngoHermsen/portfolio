@@ -24,7 +24,7 @@ export class ViewService implements AfterViewInit {
   }
 
   public jumpToSection(name: string, viewIndex?: number, closeOverlay?: string) {
-    this.router.navigate(['/main'], { fragment: name });
+    this.router.navigate(['/app'], { fragment: name });
     this.activeSection.next(name);
     this.scroller.scrollToAnchor(name);
 

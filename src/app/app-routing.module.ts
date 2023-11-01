@@ -12,8 +12,8 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  { path: '', redirectTo: '/main#title', pathMatch: 'full' },
-  { path: 'main', component: MainComponent },
+  { path: '', redirectTo: 'app', pathMatch: 'full' },
+  { path: 'app', component: MainComponent },
   { path: 'legal-notice', component: LegalNoticeComponent },
   { path: 'data-protection', component: DataProtectionComponent }
 ];

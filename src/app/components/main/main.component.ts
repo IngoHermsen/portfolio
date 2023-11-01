@@ -1,7 +1,4 @@
-import { ViewportScroller } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import * as AOS from 'aos';
-import { map } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
