@@ -74,7 +74,6 @@ export class ContactComponent {
       this.showMailSentMessage()
 
     }).catch(error => {
-      console.log(error);
       
     })
 
