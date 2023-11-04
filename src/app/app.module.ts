@@ -25,6 +25,7 @@ import { LegalNoticeComponent } from './components/policy/legal-notice/legal-not
 import { DataProtectionComponent } from './components/policy/data-protection/data-protection.component';
 import { MainComponent } from './components/main/main.component';
 import { SkillCarouselComponent } from './components/content/skill-carousel/skill-carousel.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { SkillCarouselComponent } from './components/content/skill-carousel/skil
     ButtonModule,
     OverlayPanelModule,
     TooltipModule,
-    CarouselModule
+    CarouselModule,
+    TranslateModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
