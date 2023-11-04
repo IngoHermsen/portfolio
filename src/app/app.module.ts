@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +26,12 @@ import { LegalNoticeComponent } from './components/policy/legal-notice/legal-not
 import { DataProtectionComponent } from './components/policy/data-protection/data-protection.component';
 import { MainComponent } from './components/main/main.component';
 import { SkillCarouselComponent } from './components/content/skill-carousel/skill-carousel.component';
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -57,7 +62,14 @@ import {TranslateModule} from '@ngx-translate/core';
     OverlayPanelModule,
     TooltipModule,
     CarouselModule,
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]
