@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Skill } from 'src/app/core/models/skill';
 
 @Component({
@@ -21,6 +22,12 @@ export class SkillsComponent implements OnInit {
     { name: 'Scrum', fileName: 'scrum.png', highlight: false },
     { name: 'Material Design', fileName: 'material-design.png', highlight: false }
   ]
+
+  constructor(
+    private translate: TranslateService,
+  ) {
+
+  }
 
   ngOnInit(): void {
 

@@ -3,6 +3,7 @@ import { AbstractControl, isFormControl } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,9 @@ import { Validators } from '@angular/forms';
 export class ContactComponent {
   @Output() showGithubLink: boolean = false;
 
-  constructor() {
+  constructor(
+    private translate: TranslateService,
+  ) {
     Object.values(this.formGroup.controls).forEach(control => {
       this.watchFormControlValue(control);
     })

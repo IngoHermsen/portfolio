@@ -1,3 +1,13 @@
 {
-    
+    "AboutMe": "About me",
+    "Skills": "Skills",
+    "Projects": "Projects",
+    "Contact": "Contact",
+
+    "company": "Company",
+    "message": "Message",
+    "send" : "Send message",
+
+    "legalNotice": "Legal Notice",
+    "privacyProtection": "Privacy Protection"
 }

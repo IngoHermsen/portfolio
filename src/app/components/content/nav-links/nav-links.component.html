@@ -1,6 +1,9 @@
-<nav>
-        <span [class.active]="active == 'aboutMe'" class="nav-link" routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe', 1)">Über mich</span>
-        <span [class.active]="active == 'skills'" class="nav-link" routerLink="/skills" (click)="viewService.jumpToSection('skills', 2)">Skills</span>
-        <span [class.active]="active == 'projects'" class="nav-link" routerLink="/projects" (click)="viewService.jumpToSection('projects', 3)">Projekte</span>
-        <span [class.active]="active == 'contact'" class="nav-link" routerLink="/contact" (click)="viewService.jumpToSection('contact', 4)">Kontakt</span>
+<nav>   
+        <span class="language" (click)="translate.use('en')">EN</span>
+        <span class="language" (click)="translate.use('de')">DE</span>
+
+        <span translate="AboutMe" [class.active]="active == 'aboutMe'" class="nav-link" routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe', 1)"></span>
+        <span translate="Skills" [class.active]="active == 'skills'" class="nav-link" routerLink="/skills" (click)="viewService.jumpToSection('skills', 2)"></span>
+        <span translate="Projects" [class.active]="active == 'projects'" class="nav-link" routerLink="/projects" (click)="viewService.jumpToSection('projects', 3)"></span>
+        <span translate="Contact" [class.active]="active == 'contact'" class="nav-link" routerLink="/contact" (click)="viewService.jumpToSection('contact', 4)"></span>
  </nav>

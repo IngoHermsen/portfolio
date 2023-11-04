@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class NavLinksComponent {
   active: string = '';
 
   constructor(
+    public translate: TranslateService,
     public viewService: ViewService
   ) {
     this.viewService.activeSection.subscribe((sectionName) => {

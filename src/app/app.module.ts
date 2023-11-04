@@ -62,7 +62,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     OverlayPanelModule,
     TooltipModule,
     CarouselModule,
+    HttpClientModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'de',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

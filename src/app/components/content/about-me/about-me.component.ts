@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import * as AOS from 'aos';
-import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-about-me',
@@ -20,7 +20,9 @@ onResize() {
 }
 
 
-  constructor() {
+  constructor(
+    private translate: TranslateService,
+  ) {
 
   }
 

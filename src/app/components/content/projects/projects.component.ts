@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Project } from 'src/app/core/models/project';
 
 @Component({
@@ -7,7 +8,12 @@ import { Project } from 'src/app/core/models/project';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  projects: Project[] = [
+  projects: Project[];
+  
+  constructor(
+    private translate: TranslateService,
+  ) {
+    this.projects = [
     {
       type: 'Projekt-Management',
       title: 'JOIN',
@@ -54,4 +60,6 @@ export class ProjectsComponent {
       imagePath: 'portfolio_xl.png'
     }
   ];
+  } 
+
 }

@@ -1,6 +1,6 @@
 <div class="content" data-aos="fade-right" data-aos-once="true">
     <div class="text">
-        <h1>Kontakt</h1>
+        <h1 translate="Contact"></h1>
         <article>
             Sollten Sie Interesse an einem hoch motivierten Entwickler für Ihr Team haben, der Lust darauf hat spannende
             Projekte gemeinsam voranzubringen und offen ist für Weiterentwicklung und neue Technologien:
@@ -24,7 +24,7 @@
         </span>
         <span class=" p-float-label">
             <input formControlName="company" pInputText id="company">
-            <label htmlFor="company">Unternehmen (optional)</label>
+            <label htmlFor="company">{{ 'company' | translate }} (optional)</label>
         </span>
         <span class=" p-float-label">
             <input formControlName="website" pInputText id="website">
@@ -32,10 +32,10 @@
         </span>
         <span class=" p-float-label">
             <textarea formControlName="message" pInputTextarea id="message"></textarea>
-            <label htmlFor="message">Nachricht</label>
+            <label htmlFor="message">{{ 'message' | translate }} </label>
         </span>
 
-        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Senden"
+        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" [label]="'send' | translate"
             styleClass="p-button-raised p-button-text p-button-warning w-full"></p-button>
         <div *ngIf="mailSent" class="mail-sent-overlay">
             <div class="overlay-content">
