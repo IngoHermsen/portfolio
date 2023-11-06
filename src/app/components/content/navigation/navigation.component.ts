@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -21,8 +22,8 @@ export class NavigationComponent {
   }
 
 
-
   constructor(
+    public translate: TranslateService,
     public router: Router,
     public viewService: ViewService
   ) {

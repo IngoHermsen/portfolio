@@ -18,11 +18,12 @@
     .nav-overlay {
         position: fixed;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         inset: 0;
         z-index: 2;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.9);
 
         i {
             position: absolute;
@@ -40,8 +41,27 @@
             display: flex;
             flex-direction: column;
             gap: 28px;
+            margin-bottom: 48px;
         }
 
+        .langSelection {
+            display: flex;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.6);
+
+            .active {
+                color: #ffb633;
+            }
+
+            .language {
+                width: 68px;
+
+                &:hover {
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+            }
+        }
     }
 }
 

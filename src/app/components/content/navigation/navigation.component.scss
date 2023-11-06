@@ -72,11 +72,38 @@
             }
         }
     }
+
+    .right-area {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .langSelection {
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            padding-right: 12px;
+            color: rgba(255,255,255,0.6);
+            
+            .active {
+                color: #ffb633;
+            }
+
+            .language {
+                width: 24px;
+                
+                &:hover {
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 1080px) {
     .top-bar {
-        padding: 0px 16px;
+        padding: 0px 8px;
     }
 }
 

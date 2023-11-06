@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -24,9 +25,38 @@ export class MainComponent implements OnInit, AfterViewInit  {
     } else if (direction == "up" && this.notAtTopStart()) {
 
       this.scrollUpProcedure();
-
     }
   }
+
+   showAll: boolean = false;
+  overflowScroll: boolean = false;
+
+  constructor(
+    public translate: TranslateService,
+    public elementRef: ElementRef,
+    public viewService: ViewService,
+  ) {
+    this.viewService.introFinished.subscribe((value) => {
+      this.overflowScroll = value;
+      this.showAll = value == true ? true : false;
+
+    })
+
+    this.viewService.showNavOverlay.subscribe((value) => {
+      this.showNavOverlay = value;
+    })
+  }
+
+  ngOnInit(): void {
+  }
+
+
+  ngAfterViewInit() {
+    this.contentDivElements.changes
+      .subscribe((elements: QueryList<any>) => {
+        this.viewElements = elements.toArray();
+      })
+  };
 
   scrollDownProcedure() {
     let nextViewElement = this.viewElements[this.viewService.currentViewIndex + 1]
@@ -61,7 +91,6 @@ export class MainComponent implements OnInit, AfterViewInit  {
     return (this.viewService.currentViewIndex > 0);
   }
 
-
   scrollDirection() {
     let scrollDistance = window.scrollY - this.currentScrollYPosition;
 
@@ -76,33 +105,6 @@ export class MainComponent implements OnInit, AfterViewInit  {
     }
   }
 
-  showAll: boolean = false;
-  overflowScroll: boolean = false;
 
-  constructor(
-    public elementRef: ElementRef,
-    public viewService: ViewService,
-  ) {
-    this.viewService.introFinished.subscribe((value) => {
-      this.overflowScroll = value;
-      this.showAll = value == true ? true : false;
-
-    })
-
-    this.viewService.showNavOverlay.subscribe((value) => {
-      this.showNavOverlay = value;
-    })
-  }
-
-  ngOnInit(): void {
-  }
-
-
-  ngAfterViewInit() {
-    this.contentDivElements.changes
-      .subscribe((elements: QueryList<any>) => {
-        this.viewElements = elements.toArray();
-      })
-  };
 }
 

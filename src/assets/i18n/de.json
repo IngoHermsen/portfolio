@@ -23,5 +23,9 @@
     "legals": {
         "legalNotice": "Impressum",
         "privacyProtection": "Datenschutz"
+    },
+
+    "longText": {
+        
     }
 }

@@ -11,7 +11,14 @@
             <i class="pi pi-chevron-circle-down" style="font-size: 2rem"></i>
         </div>
     </div>
-    <div class="public-media-links">
-        <app-public-media-links></app-public-media-links>
+    <div class="right-area">
+        <div *ngIf="!showOverlayToggleText" class="langSelection">
+            <span [class.active]="translate.currentLang == 'en'" class="language" (click)="translate.use('en')">EN</span>
+            <span [class.active]="translate.currentLang == 'de'" class="language" (click)="translate.use('de')">DE</span>
+        </div>
+        <div class="public-media-links">
+            <app-public-media-links></app-public-media-links>
+        </div>
     </div>
+
 </div>

@@ -104,7 +104,7 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
       this._typeStrings(this.h1TagOpen, this.h1TagOpenEl);
       this.langChangeSubscription.unsubscribe();
     })
-    
+
 
   };
 
@@ -135,10 +135,12 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
 
       if (processedCharacter == string.length) {
         if (isIAmText) {
-          this._checkIfHideIAmText()
+          this._checkIfHideIAmText(string)
+        } else {
+          clearInterval(this.typingInterval);
+          this.typeState.next(string);
         }
-        clearInterval(this.typingInterval);
-        this.typeState.next(string);
+
       }
     }, 70)
 
@@ -188,9 +190,13 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
     this._setFinalState()
   }
 
-  _checkIfHideIAmText() {
-
-    this.hideIAmText = window.innerWidth <= 420;
+  _checkIfHideIAmText(string: string) {
+    const hideTimeout = setTimeout(() => {
+      this.hideIAmText = window.innerWidth <= 420;
+      clearTimeout(hideTimeout);
+      clearInterval(this.typingInterval);
+      this.typeState.next(string);
+    }, 300)
   }
 
   skipIntro() {

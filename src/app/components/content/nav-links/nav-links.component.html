@@ -1,7 +1,4 @@
 <nav>   
-        <span class="language" (click)="translate.use('en')">EN</span>
-        <span class="language" (click)="translate.use('de')">DE</span>
-
         <span translate="nav.AboutMe" [class.active]="active == 'aboutMe'" class="nav-link" routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe', 1)"></span>
         <span translate="nav.Skills" [class.active]="active == 'skills'" class="nav-link" routerLink="/skills" (click)="viewService.jumpToSection('skills', 2)"></span>
         <span translate="nav.Projects" [class.active]="active == 'projects'" class="nav-link" routerLink="/projects" (click)="viewService.jumpToSection('projects', 3)"></span>
