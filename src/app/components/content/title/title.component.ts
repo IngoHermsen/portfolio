@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { Subject, Subscription, timeInterval } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Subject, Subscriber, Subscription, timeInterval } from 'rxjs';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ViewService } from 'src/app/core/services/view.service';
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent implements OnInit, AfterViewInit {
+export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
   smallView: boolean = false;
   hideTag: boolean = false;
   finalView: boolean = false;
@@ -54,12 +55,17 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   typeState: Subject<string> = new Subject();
 
+  // Translate Subscription;
+  langChangeSubscription!: Subscription;
+
   constructor(
+    private translate: TranslateService,
     public viewService: ViewService
   ) {
     this.viewService.introFinished.subscribe((value) => {
       this.finalView = value;
-    })
+    });
+
   }
 
   ngOnInit(): void {
@@ -84,6 +90,10 @@ export class TitleComponent implements OnInit, AfterViewInit {
     })
   }
 
+  ngOnDestroy(): void {
+    this.langChangeSubscription.unsubscribe();
+  }
+
   getDaytimeGreeting() {
     let date = new Date();
     let hours = date.getHours();
@@ -104,20 +114,20 @@ export class TitleComponent implements OnInit, AfterViewInit {
 
   typeStrings(string: string, targetElement: ElementRef, isIAmText?: boolean) {
     let processedCharacter: number = 0;
-   
-      this.typingInterval = setInterval(() => {
-        targetElement.nativeElement.innerHTML += string.charAt(processedCharacter);
-        processedCharacter++;
-        
-        if (processedCharacter == string.length) {
-          if (isIAmText) {
-            this.checkIfHideIAmText()
-          }
-          clearInterval(this.typingInterval);
-          this.typeState.next(string);
+
+    this.typingInterval = setInterval(() => {
+      targetElement.nativeElement.innerHTML += string.charAt(processedCharacter);
+      processedCharacter++;
+
+      if (processedCharacter == string.length) {
+        if (isIAmText) {
+          this.checkIfHideIAmText()
         }
-      },70)
-    
+        clearInterval(this.typingInterval);
+        this.typeState.next(string);
+      }
+    }, 70)
+
   }
 
   finishH1Tag() {
@@ -161,6 +171,7 @@ export class TitleComponent implements OnInit, AfterViewInit {
   finishSecondLine() {
     this.secondLineFinished = true;
     this.viewService.introFinished.next(true);
+    this._setFinalState()
   }
 
   checkIfHideIAmText() {
@@ -168,31 +179,38 @@ export class TitleComponent implements OnInit, AfterViewInit {
     this.hideIAmText = window.innerWidth <= 420;
   }
 
-  skipIntro() {        
+  skipIntro() {
     clearTimeout(this.timeout);
     clearInterval(this.typingInterval);
     clearInterval(this.cursorInterval);
     this.typingSubscription.unsubscribe();
 
-    this.setFinalState();
+    this._setFinalState();
     this.viewService.introFinished.next(true);
   }
 
-  setFinalState() {
+  _setFinalState() {
     this.h1TagOpenEl.nativeElement.innerText = this.h1TagOpen;
-
-    this.iAmTextEl.nativeElement.innerText = this.iAmText;
-    this.nameTextEl.nativeElement.innerText = this.nameText;
-    this.titleTagOpenEl.nativeElement.innerText = this.titleTagOpen;
-    this.jobTitleTextEl.nativeElement.innerText = this.jobTitle;
-  
-    this.cursorVisible = false;
     this.h1TagFinished = true;
     this.titleTagFinished = true;
     this.firstLineFinished = true;
     this.secondLineFinished = true;
     this.finalView = true;
 
-    
+    this._setElementsInnerText();
+    this.setLanguageChangeSubscription();
+  }
+
+  _setElementsInnerText() {
+    this.iAmTextEl.nativeElement.innerText = this.translate.instant('title.iAm');
+    this.nameTextEl.nativeElement.innerText = this.nameText;
+    this.titleTagOpenEl.nativeElement.innerText = this.titleTagOpen;
+    this.jobTitleTextEl.nativeElement.innerText = this.jobTitle;
+  }
+
+  setLanguageChangeSubscription() {
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(e => {
+      this._setElementsInnerText();
+    })
   }
 }

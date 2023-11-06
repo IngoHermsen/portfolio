@@ -25,7 +25,7 @@
         <img draggable="false" [class.show-image]="finalView" src="/assets/img/profile-image_1.png"
             alt="profile-image-1">
     </div>
-    <span *ngIf="!finalView" class="bottom-area skip" (click)="skipIntro()">Überspringen</span>
+    <span translate="title.skip" *ngIf="!finalView" class="bottom-area skip" (click)="skipIntro()"></span>
     <span *ngIf="finalView" class="bottom-area pointdown-animation">
         <i routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe')" class="pi pi-chevron-down"></i>
     </span>

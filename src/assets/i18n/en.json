@@ -1,13 +1,21 @@
 {
-    "AboutMe": "About me",
-    "Skills": "Skills",
-    "Projects": "Projects",
-    "Contact": "Contact",
-
-    "company": "Company",
-    "message": "Message",
-    "send" : "Send message",
-
-    "legalNotice": "Legal Notice",
-    "privacyProtection": "Privacy Protection"
+    "title": {
+        "iAm": "I am",
+        "skip": "Skip Intro"
+    },
+    "nav": {
+        "AboutMe": "About me",
+        "Skills": "Skills",
+        "Projects": "Projects",
+        "Contact": "Contact"
+    },
+    "contactForm": {
+        "company": "Company",
+        "message": "Message",
+        "send": "Send message"
+    },
+    "legals": {
+        "legalNotice": "Legal Notice",
+        "privacyProtection": "Privacy Protection"
+    }
 }
