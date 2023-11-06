@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Subject, Subscriber, Subscription, timeInterval } from 'rxjs';
 import { ViewService } from 'src/app/core/services/view.service';
@@ -8,7 +8,7 @@ import { ViewService } from 'src/app/core/services/view.service';
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
+export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
   smallView: boolean = false;
   hideTag: boolean = false;
   finalView: boolean = false;
@@ -37,7 +37,8 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   greeting = "";
-  iAmText = "Ich bin";
+
+  iAmText = "";
   nameText = "Ingo Hermsen"
   jobTitle = "Frontend Developer.";
 
@@ -62,6 +63,7 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
     private translate: TranslateService,
     public viewService: ViewService
   ) {
+
     this.viewService.introFinished.subscribe((value) => {
       this.finalView = value;
     });
@@ -69,9 +71,10 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this._setAnimatedStrings();
+
     this.smallView = window.innerWidth <= 1300;
     this.hideTag = window.innerWidth <= 1000;
-    this.greeting = this.getDaytimeGreeting();
 
     this.cursorInterval = setInterval(() => {
       this.cursorVisible = !this.cursorVisible;
@@ -79,40 +82,51 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.typingSubscription = this.typeState.subscribe((value) => {
       switch (value) {
-        case this.h1TagOpen: this.finishH1Tag(); break;
-        case this.greeting: this.deleteGreeting(); break;
-        case 'greetingDeleted': this.typeStrings(this.iAmText, this.iAmTextEl, true); break;
-        case this.iAmText: this.typeStrings(this.nameText, this.nameTextEl); break;
-        case this.nameText: this.finishFirstLine(); break;
-        case this.titleTagOpen: this.finishTitleTag(); break;
-        case this.jobTitle: this.finishSecondLine(); break;
+        case this.h1TagOpen: this._finishH1Tag(); break;
+        case this.greeting: this._deleteGreeting(); break;
+        case 'greetingDeleted': this._typeStrings(this.iAmText, this.iAmTextEl, true); break;
+        case this.iAmText: this._typeStrings(this.nameText, this.nameTextEl); break;
+        case this.nameText: this._finishFirstLine(); break;
+        case this.titleTagOpen: this._finishTitleTag(); break;
+        case this.jobTitle: this._finishSecondLine(); break;
       }
     })
-  }
+  };
 
   ngOnDestroy(): void {
     this.langChangeSubscription.unsubscribe();
+  };
+
+  ngAfterViewInit(): void {
+    this.langChangeSubscription = this.translate.onLangChange.subscribe(e => {
+      this._setAnimatedStrings();
+      console.log(this.iAmText);
+      this._typeStrings(this.h1TagOpen, this.h1TagOpenEl);
+      this.langChangeSubscription.unsubscribe();
+    })
+    
+
+  };
+
+  _setAnimatedStrings() {
+    this.iAmText = this.translate.instant('title.iAm');
+    this.greeting = this._setDaytimeGreeting();
   }
 
-  getDaytimeGreeting() {
+  _setDaytimeGreeting() {
     let date = new Date();
     let hours = date.getHours();
 
     if (hours <= 11) {
-      return "Guten Morgen."
+      return this.translate.instant('title.greetings.goodMorning')
     } else if (hours <= 17) {
-      return "Guten Tag."
+      return this.translate.instant('title.greetings.goodAfternoon')
     } else {
-      return "Guten Abend."
+      return this.translate.instant('title.greetings.goodEvening')
     }
   }
 
-  ngAfterViewInit(): void {
-    this.typeStrings(this.h1TagOpen, this.h1TagOpenEl);
-
-  }
-
-  typeStrings(string: string, targetElement: ElementRef, isIAmText?: boolean) {
+  _typeStrings(string: string, targetElement: ElementRef, isIAmText?: boolean) {
     let processedCharacter: number = 0;
 
     this.typingInterval = setInterval(() => {
@@ -121,7 +135,7 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
 
       if (processedCharacter == string.length) {
         if (isIAmText) {
-          this.checkIfHideIAmText()
+          this._checkIfHideIAmText()
         }
         clearInterval(this.typingInterval);
         this.typeState.next(string);
@@ -130,20 +144,20 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  finishH1Tag() {
+  _finishH1Tag() {
     this.timeout = setTimeout(() => {
       clearTimeout(this.timeout)
       this.h1TagFinished = true;
-      this.typeStrings(this.greeting, this.iAmTextEl);
+      this._typeStrings(this.greeting, this.iAmTextEl);
     }, 150)
   }
 
-  finishTitleTag() {
+  _finishTitleTag() {
     this.titleTagFinished = true;
-    this.typeStrings(this.jobTitle, this.jobTitleTextEl);
+    this._typeStrings(this.jobTitle, this.jobTitleTextEl);
   }
 
-  deleteGreeting() {
+  _deleteGreeting() {
     let remainingLength: number = this.greeting.length;
     this.timeout = setTimeout(() => {
       clearTimeout(this.timeout)
@@ -160,21 +174,21 @@ export class TitleComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  finishFirstLine() {
+  _finishFirstLine() {
     this.firstLineFinished = true;
     this.timeout = setTimeout(() => {
       clearTimeout(this.timeout);
-      this.typeStrings(this.titleTagOpen, this.titleTagOpenEl);
+      this._typeStrings(this.titleTagOpen, this.titleTagOpenEl);
     }, 600)
   }
 
-  finishSecondLine() {
+  _finishSecondLine() {
     this.secondLineFinished = true;
     this.viewService.introFinished.next(true);
     this._setFinalState()
   }
 
-  checkIfHideIAmText() {
+  _checkIfHideIAmText() {
 
     this.hideIAmText = window.innerWidth <= 420;
   }

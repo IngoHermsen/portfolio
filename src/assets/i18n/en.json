@@ -1,7 +1,13 @@
 {
     "title": {
         "iAm": "I am",
-        "skip": "Skip Intro"
+        "skip": "Skip Intro",
+
+        "greetings": {
+            "goodMorning": "Good morning.",
+            "goodAfternoon": "Good afternoon.",
+            "goodEvening": "Good evening."
+        }
     },
     "nav": {
         "AboutMe": "About me",

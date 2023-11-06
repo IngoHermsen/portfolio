@@ -1,7 +1,13 @@
 {
     "title": {
         "iAm": "Ich bin",
-        "skip": "Überspringen"
+        "skip": "Überspringen",
+
+        "greetings": {
+            "goodMorning": "Guten Morgen.",
+            "goodAfternoon": "Guten Tag.",
+            "goodEvening": "Guten Abend."
+        }
     },
     "nav": {
         "AboutMe": "Über mich",
