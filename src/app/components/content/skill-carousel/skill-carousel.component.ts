@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-skill-carousel',
@@ -10,27 +11,33 @@ export class SkillCarouselComponent implements OnInit {
   skillArticles: any[] = [];
   activeIndex: number = 0;
 
+  constructor(
+    public translate: TranslateService,
+  ) {
+
+  }
+
 
   ngOnInit(): void {
     this.skillArticles = [
       { 
-        headline: 'Teamwork',
-        text: 'Erfahrung in Gruppenarbeit und Grundkenntnisse von agilen Methoden.',
+        titleTranslationRef: 'teamworkTitle',
+        textTranslationRef: 'teamworkText',
         skills: ['HTML', 'CSS', 'JavaScript', 'GIT', 'Scrum']
       },
       { 
-        headline: 'Benutzerfreundliche Oberfläche',
-        text: 'Umsetzung responsiver Applikationen, auch mit Hilfe von CSS-Frameworks und UI-Libraries.',
+        titleTranslationRef: 'userInterfaceTitle',
+        textTranslationRef: 'userInterfaceText',
         skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Material Design']
       },
       { 
-        headline: 'Asynchrone Programmierung',
-        text: 'Zugriff auf Datenbanken und Rest-Api unter Verwendung von asynchronen Methoden und RXJS-Konzepten.',
+        titleTranslationRef: 'asyncProgrammingTitle',
+        textTranslationRef: 'asyncProgrammingText',
         skills: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Rest-Api', 'Angular']
       },
       { 
-        headline: 'Komplexe Anwendungen',
-        text: 'Sehr guter Umgang mit den Anforderungen aufwändiger Applikationen unter Verwendung eines JS-Frameworks.',
+        titleTranslationRef: 'complexAppsTitle',
+        textTranslationRef: 'complexAppsText',
         skills: ['HTML', 'CSS', 'Angular', 'TypeScript', 'Firebase']
       }
     ]

@@ -2,8 +2,8 @@
     <div class="carousel-content">
         <i (click)="goToArticle(activeIndex -1)" class="pi pi-chevron-left"></i>
         <div class="content-wrapper">
-            <h3 class="headline">{{ skillArticles[activeIndex].headline }}</h3>
-            <div class="content">{{ skillArticles[activeIndex].text }}</div>
+            <h3 class="headline">{{ 'skillCarousel.' + skillArticles[activeIndex].titleTranslationRef | translate }}</h3>
+            <div class="content">{{ 'skillCarousel.' + skillArticles[activeIndex].textTranslationRef | translate }}</div>
         </div>
         <i (click)="goToArticle(activeIndex + 1)" class="pi pi-chevron-right"></i>
     </div>

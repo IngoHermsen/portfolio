@@ -2,7 +2,6 @@
     "title": {
         "iAm": "Ich bin",
         "skip": "Überspringen",
-
         "greetings": {
             "goodMorning": "Guten Morgen.",
             "goodAfternoon": "Guten Tag.",
@@ -16,16 +15,38 @@
         "Contact": "Kontakt"
     },
     "contactForm": {
+        "thanks": "Vielen Dank!",
         "company": "Unternehmen",
         "message": "Nachricht",
-        "send": "Senden"
+        "send": "Senden",
+        "mailSent": "Ihre Nachricht wurde gesendet.",
+        "answerSoon": "Sie erhalten schnellstmöglich<br>eine Antwort."
     },
     "legals": {
         "legalNotice": "Impressum",
         "privacyProtection": "Datenschutz"
     },
-
     "longText": {
-        "aboutMeDesc": "Ich bin ein 39-jähriger Webentwickler aus Weeze (Kreis Kleve, NRW), mit Erfahrung im Erstellen von webbasierten Applikationen mit JavaScript & Angular.<br> Stets begeistert von den Möglichkeiten der modernen Webentwicklung habe ich mich im letzten Jahr dazu entschlossen, meine Coding-Erfahrungen auf ein professionelles Level zu bringen. Mein Ziel war es, Fähigkeiten zu erwerben, die mir die effiziente Entwicklung von webbasierten Anwendungen erlauben.<br>Dieses Ziel habe ich mit der Developer Akademie in München erreicht. In zahlreichen praktischen Übungen und Projekten habe ich ständig Neues kennengelernt und - unter Verwendung vieler Good-Practice-Richtlinien - intensiv angewendet. Die Projekte wurden dabei immer komplexer und von erfahrenen Mentoren geprüft und freigegeben.<br>Durch diesen kontinuierlichen Prozess des Lernens und der direkten Umsetzung habe ich mich innerhalb der letzten Monate erheblich weiterentwickelt.<br><br>Überzeugen Sie sich gerne von meinen Fähigkeiten in meiner Auswahl an responsiven Webseiten und Applikationen."
+        "aboutMeDesc": "Ich bin ein 39-jähriger Webentwickler aus Weeze (Kreis Kleve, NRW), mit Erfahrung im Erstellen von webbasierten Applikationen mit JavaScript & Angular.<br> Stets begeistert von den Möglichkeiten der modernen Webentwicklung habe ich mich im letzten Jahr dazu entschlossen, meine Coding-Erfahrungen auf ein professionelles Level zu bringen.<br>Mein Ziel war es, Fähigkeiten zu erwerben, die mir die effiziente Entwicklung von webbasierten Anwendungen in einem Entwicklerteam erlauben.<br>Dieses Ziel habe ich mit der Developer Akademie in München erreicht. In zahlreichen praktischen Übungen und Projekten habe ich ständig Neues kennengelernt und - unter Anwendung von Good-Practice-Richtlinien - intensiv angewendet. Die Projekte wurden dabei immer komplexer und von erfahrenen Mentoren geprüft und freigegeben.<br>Durch diesen kontinuierlichen Prozess des Lernens und der direkten Umsetzung habe ich mich innerhalb der letzten Monate erheblich weiterentwickelt.<br><br>Überzeugen Sie sich gerne von meinen Fähigkeiten in meiner Auswahl an responsiven Webseiten und Applikationen."
+    },
+    "skillCarousel": {
+        "teamworkTitle": "Teamwork",
+        "teamworkText": "Erfahrung in Gruppenarbeit und Grundkenntnisse von agilen Methoden",
+        "userInterfaceTitle": "Benutzerfreundliche Oberfläche",
+        "userInterfaceText": "Umsetzung responsiver Applikationen, auch mit Hilfe von CSS-Frameworks und UI-Libraries.",
+        "asyncProgrammingTitle": "Asynchrone Programmierung",
+        "asyncProgrammingText": "Zugriff auf Datenbanken und Rest-Api unter Verwendung von asynchronen Methoden und RXJS-Konzepten.",
+        "complexAppsTitle": "Komplexe Anwendungen",
+        "complexAppsText": "Sehr guter Umgang mit den Anforderungen aufwändiger Applikationen unter Verwendung eines JS-Frameworks."
+    },
+    "projects": {
+        "projManDesc": "Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Nutzerbasierte Projekte und Statusanpassung per Drag & Drop.",
+        "slackDesc": "Nach dem Vorbild von 'Slack'. Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit Firebase Datenbank.",
+        "polloDesc": "Prototyp eines Jump-And-Run Game mit Fokus auf objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.",
+        "portfolioDesc": "Eine persönliche Vorstellung meiner Fähigkeiten und Ambitionen als Frontendentwickler."
+    },
+    "contact": {
+        "contactMeText": ""
     }
+
 }

@@ -24,7 +24,7 @@
         </span>
         <span class=" p-float-label">
             <input formControlName="company" pInputText id="company">
-            <label htmlFor="company">{{ 'company' | translate }} (optional)</label>
+            <label htmlFor="company">{{ 'contactForm.company' | translate }} (optional)</label>
         </span>
         <span class=" p-float-label">
             <input formControlName="website" pInputText id="website">
@@ -32,17 +32,16 @@
         </span>
         <span class=" p-float-label">
             <textarea formControlName="message" pInputTextarea id="message"></textarea>
-            <label htmlFor="message">{{ 'message' | translate }} </label>
+            <label htmlFor="message">{{ 'contactForm.message' | translate }} </label>
         </span>
 
-        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" [label]="'send' | translate"
+        <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" [label]="'contactForm.send' | translate"
             styleClass="p-button-raised p-button-text p-button-warning w-full"></p-button>
         <div *ngIf="mailSent" class="mail-sent-overlay">
             <div class="overlay-content">
-                <h3>Vielen Dank!</h3>
-                <div>Ihre Nachricht wurde gesendet.</div>
-                <div>Sie erhalten schnellstmöglich <br>
-                    eine Antwort.</div>
+                <h3>{{ 'contactForm.thanks' | translate }}</h3>
+                <div>{{ 'contactForm.mailSent' | translate}}</div>
+                <div [innerHTML]="'contactForm.answerSoon' | translate"></div>
             </div>
 
         </div>
