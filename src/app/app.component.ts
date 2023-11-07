@@ -17,8 +17,9 @@ export class AppComponent implements OnDestroy{
     this.langChangeSubscription = this.translate.onLangChange.subscribe((e) => {
       sessionStorage.setItem('language', e.lang);
     });
+    
     translate.setDefaultLang('de');
-    translate.use(sessionStorage.getItem('language') ?? translate.getDefaultLang())
+    translate.use(sessionStorage.getItem('language') ?? translate.getBrowserLang() ?? translate.getDefaultLang())
   }
 
   ngOnDestroy(): void {    

@@ -12,13 +12,13 @@ export class NavigationComponent {
   showThis: boolean = false;
   showLogo: boolean = false;
   showTopNavLinks: boolean = false;
-  showOverlayToggleText: boolean = true;
+  showOverlayToggleText: boolean = false;
   titleVisible: boolean = true;
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.showTopNavLinks = window.innerWidth >= 1000 ? true : false;
-    this.showOverlayToggleText = window.innerWidth <= 390 ? true : false ;
+    this.showTopNavLinks = window.innerWidth >= 1000;
+    this.showOverlayToggleText = window.innerWidth <= 390;
   }
 
 
