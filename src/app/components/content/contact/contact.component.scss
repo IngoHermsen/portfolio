@@ -40,8 +40,13 @@ form {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: 8px;
             align-items: center;
-        
+            text-align: center;
+            
+            h3 {
+                margin: 0px 0px 12px;
+            }
         }
     }
 }

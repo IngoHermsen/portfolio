@@ -35,18 +35,19 @@
         "userInterfaceTitle": "Benutzerfreundliche Oberfläche",
         "userInterfaceText": "Umsetzung responsiver Applikationen, auch mit Hilfe von CSS-Frameworks und UI-Libraries.",
         "asyncProgrammingTitle": "Asynchrone Programmierung",
-        "asyncProgrammingText": "Zugriff auf Datenbanken und Rest-Api unter Verwendung von asynchronen Methoden und RXJS-Konzepten.",
+        "asyncProgrammingText": "Zugriff auf Datenbanken und REST-API unter Verwendung von asynchronen Methoden und RXJS-Konzepten.",
         "complexAppsTitle": "Komplexe Anwendungen",
         "complexAppsText": "Sehr guter Umgang mit den Anforderungen aufwändiger Applikationen unter Verwendung eines JS-Frameworks."
     },
     "projects": {
+        "introText": "Hier präsentiere ich meine wichtigsten Web-Applikationen, sowohl für den Business-Bereich als auch ein OOP-Basiertes Jump-And-Run-Game.",
         "projManDesc": "Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Nutzerbasierte Projekte und Statusanpassung per Drag & Drop.",
-        "slackDesc": "Nach dem Vorbild von 'Slack'. Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit Firebase Datenbank.",
+        "slackDesc": "Nach dem Vorbild von 'Slack'. Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit Firebase Datenbank als Backend-Lösung.",
         "polloDesc": "Prototyp eines Jump-And-Run Game mit Fokus auf objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.",
-        "portfolioDesc": "Eine persönliche Vorstellung meiner Fähigkeiten und Ambitionen als Frontendentwickler."
+        "portfolioDesc": "Eine persönliche Vorstellung meiner Fähigkeiten und Ambitionen als Frontendentwickler für Ihr Team."
     },
     "contact": {
-        "contactMeText": ""
+        "contactMeText": "Sollten Sie Interesse an einem hoch motivierten Entwickler für Ihr Team haben, der Lust darauf hat spannende Projekte gemeinsam voranzubringen und offen ist für Weiterentwicklung und neue Technologien:<br><br>Ich freue mich auf Ihre Nachricht."
     }
 
 }

@@ -16,9 +16,12 @@
         "Contact": "Contact"
     },
     "contactForm": {
+        "thanks": "Thank you!",
         "company": "Company",
         "message": "Message",
-        "send": "Send message"
+        "send": "Send message",
+        "mailSent": "Your message has been sent.",
+        "answerSoon": "I will reply as soon as possible."
     },
     "legals": {
         "legalNotice": "Legal Notice",
@@ -26,8 +29,29 @@
     },
 
     "longText": {
-        "aboutMeDesc": "I am a 39 years old Web Developer from Weeze (Germany, North-Rhine-Westphalia)  with experience in building web apps with JavaScript & Angular.<br>Always fascinated by the possibilities of modern web development I decided to turn my first knowledge of coding into the ability to create professional web-based applications in a team.<br>I have reached this goal in the past year with the Developer Akademie in Munich. During that time I have not only learned basic concepts of coding but also continously used this knowledge in countless exercise and projects. <br>These projects have been checked and approved by experienced Mentors.<br>This continuous process of learning and practical usage improved my coding abilities in the past months significantl   y.<br><br>Feel free to get a look into my collection of responsive websites and applications and convince yourself of my abilities."
+        "aboutMeDesc": "I am a 39 years old Web Developer from Weeze (Germany, North-Rhine-Westphalia)  with experience in building web apps with JavaScript & Angular.<br>Always fascinated by the possibilities of modern web development I decided to turn my first knowledge of coding into the ability to create professional web-based applications in a team.<br>I have reached this goal in the past year with the Developer Akademie in Munich. During that time I have not only learned basic concepts of coding but also continously used this knowledge in countless exercise and projects. <br>These projects have been checked and approved by experienced Mentors.<br>This continuous process of learning and practical usage improved my coding abilities in the past months significantly.<br><br>Feel free to get a look into my collection of responsive websites and applications and convince yourself of my abilities."
+    },
+    "skillCarousel": {
+        "teamworkTitle": "Teamwork",
+        "teamworkText": "Experience in working in groups and basic knowledge of agile methods.",
+        "userInterfaceTitle": "Userfriendly Interface",
+        "userInterfaceText": "Development of responsive applications by using CSS-Frameworks and UI-Libraries.",
+        "asyncProgrammingTitle": "Asynchronous programming",
+        "asyncProgrammingText": "Accessing database und REST-API using asynchronous methods and und RXJS concepts.",
+        "complexAppsTitle": "Complex applications",
+        "complexAppsText": "Very good at handling the requirements of complex applications by using a javascript framework."
+    },
+    "projects": {
+        "introText": "This is where I present my most important web applications. Includes both apps for cooperative working in business or social context as well as an OOP-based Jump 'n' Run game.",
+        "projManDesc": "Easy task management according to Kanban. Create user-based projects and update the status with drag & drop. Includes firestore backend for users and tasks.",
+        "slackDesc": "Inspired by 'Slack'. Includes common messaging functions like channel management und a thread-based comment system. Includes a firestore backend solution for users and thread management",
+        "polloDesc": "Prototype of a jump 'n' run game in Vanilla Javascript with focus on object-oriented programming. Help farmer Pepe to prevent his village from enemies.",
+        "portfolioDesc": "A personal introduction of myself and my abilities and ambitions as a frontend developer for your team."
+    },
+    "contact": {
+        "contactMeText": "If you are interested in a passionate developer with a high motivation and interest in bringing your projects to progress as part of your team:<br><br>I am really looking forward to your message."
     }
+
 
     
 }
