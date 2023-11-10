@@ -284,13 +284,10 @@
 @media only screen and (max-width: 580px) {
 
     .wrapper {
-        .small-avatar {
-            max-width: 325px;
-        }
 
         .left-content {
             .title-text {
-                padding-top: 100px;
+                padding-top: 60px;
             }
 
             .name-text {
@@ -307,17 +304,11 @@
             max-width: 325px;
         }
 
-        .left-content {
-            .title-text {
-                padding-top: 100px;
-            }
-
-            .job-title {
-                line-height: 48px;
-                text-align: center;
-                font-size: 3rem;
-                white-space: break-spaces;
-            }
+        .job-title {
+            line-height: 48px;
+            text-align: center;
+            font-size: 3rem;
+            white-space: break-spaces;
         }
     }
 }
