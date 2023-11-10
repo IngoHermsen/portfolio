@@ -31,7 +31,7 @@
     },
     "skillCarousel": {
         "teamworkTitle": "Teamwork",
-        "teamworkText": "Erfahrung in Gruppenarbeit und Grundkenntnisse von agilen Methoden",
+        "teamworkText": "Erfahrung in Gruppenarbeit und Grundkenntnisse von agilen Methoden.",
         "userInterfaceTitle": "Benutzerfreundliche Oberfläche",
         "userInterfaceText": "Umsetzung responsiver Applikationen, auch mit Hilfe von CSS-Frameworks und UI-Libraries.",
         "asyncProgrammingTitle": "Asynchrone Programmierung",

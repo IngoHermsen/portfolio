@@ -1,6 +1,6 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { Subject, Subscriber, Subscription, timeInterval } from 'rxjs';
+import { Observable, Subject, Subscriber, Subscription, concat, timeInterval } from 'rxjs';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -20,9 +20,12 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
   cursorInterval: any;
   timeout: any;
 
-  // Subscriptions:
-  typingSubscription!: Subscription;
+  // Observables:
+  animationProcedure$!: Observable<any>;
+  typeAnimationObs$!: Observable<any>;
 
+  // Subscriptions:
+  typeAnimationSubscription!: Subscription;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
   @ViewChild('iAmText') iAmTextEl!: ElementRef;
@@ -80,17 +83,17 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
       this.cursorVisible = !this.cursorVisible;
     }, 450);
 
-    this.typingSubscription = this.typeState.subscribe((value) => {
-      switch (value) {
-        case this.h1TagOpen: this._finishH1Tag(); break;
-        case this.greeting: this._deleteGreeting(); break;
-        case 'greetingDeleted': this._typeStrings(this.iAmText, this.iAmTextEl, true); break;
-        case this.iAmText: this._typeStrings(this.nameText, this.nameTextEl); break;
-        case this.nameText: this._finishFirstLine(); break;
-        case this.titleTagOpen: this._finishTitleTag(); break;
-        case this.jobTitle: this._finishSecondLine(); break;
-      }
-    })
+    // this.typingSubscription = this.typeState.subscribe((value) => {
+    //   switch (value) {
+    //     case this.h1TagOpen: this._finishH1Tag(); break;
+    //     case this.greeting: this._deleteGreeting(); break;
+    //     case 'greetingDeleted': this._typeStrings(this.iAmText, this.iAmTextEl, true); break;
+    //     case this.iAmText: this._typeStrings(this.nameText, this.nameTextEl); break;
+    //     case this.nameText: this._finishFirstLine(); break;
+    //     case this.titleTagOpen: this._finishTitleTag(); break;
+    //     case this.jobTitle: this._finishSecondLine(); break;
+    //   }
+    // })
   };
 
   ngOnDestroy(): void {
@@ -100,12 +103,23 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     this.langChangeSubscription = this.translate.onLangChange.subscribe(e => {
       this._setAnimatedStrings();
-      console.log(this.iAmText);
-      this._typeStrings(this.h1TagOpen, this.h1TagOpenEl);
+
+      this.animationProcedure$ = new Observable(observer => {
+        concat(
+          this._createTypeAnimationObs(this.h1TagOpen, this.h1TagOpenEl),
+          this._createTypeAnimationObs(this.greeting, this.iAmTextEl),
+          this._createDeleteAnimationObs(this.greeting, this.iAmTextEl),
+          this._createTypeAnimationObs(this.iAmText, this.iAmTextEl),
+          this._createTypeAnimationObs(this.nameText, this.nameTextEl),
+          this._createTypeAnimationObs(this.titleTagOpen, this.titleTagOpenEl),
+          this._createTypeAnimationObs(this.jobTitle, this.jobTitleTextEl),
+          ).subscribe()
+      });
+
+      this.typeAnimationSubscription = this.animationProcedure$.subscribe();
+
       this.langChangeSubscription.unsubscribe();
     })
-
-
   };
 
   _setAnimatedStrings() {
@@ -126,68 +140,89 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  _typeStrings(string: string, targetElement: ElementRef, isIAmText?: boolean) {
-    let processedCharacter: number = 0;
+  _createTypeAnimationObs(string: string, targetElement: ElementRef, isIAmText?: boolean) {
+    return new Observable<any>(observer => {
+      let processedCharacter: number = 0;
 
-    this.typingInterval = setInterval(() => {
-      targetElement.nativeElement.innerHTML += string.charAt(processedCharacter);
-      processedCharacter++;
-
-      if (processedCharacter == string.length) {
-        if (isIAmText) {
-          this._checkIfHideIAmText(string)
-        } else {
-          clearInterval(this.typingInterval);
-          this.typeState.next(string);
-        }
-
-      }
-    }, 70)
-
-  }
-
-  _finishH1Tag() {
-    this.timeout = setTimeout(() => {
-      clearTimeout(this.timeout)
-      this.h1TagFinished = true;
-      this._typeStrings(this.greeting, this.iAmTextEl);
-    }, 150)
-  }
-
-  _finishTitleTag() {
-    this.titleTagFinished = true;
-    this._typeStrings(this.jobTitle, this.jobTitleTextEl);
-  }
-
-  _deleteGreeting() {
-    let remainingLength: number = this.greeting.length;
-    this.timeout = setTimeout(() => {
-      clearTimeout(this.timeout)
       this.typingInterval = setInterval(() => {
-        if (remainingLength > 0) {
-          remainingLength--;
-          this.iAmTextEl.nativeElement.innerHTML = this.greeting.slice(0, remainingLength)
-        } else {
+        targetElement.nativeElement.innerHTML += string.charAt(processedCharacter);
+        processedCharacter++;
+
+        if (processedCharacter == string.length) {
+          this._setAnimationProgress(string);
           clearInterval(this.typingInterval);
-          this.typeState.next('greetingDeleted')
+          observer.complete();
         }
-      }, 70)
-    }, 1200)
+      }, 70);
+    });
+  };
 
+
+  _createDeleteAnimationObs(string: string, targetElement: ElementRef) {
+    return new Observable<any>(observer => {
+
+      let remainingLength: number = string.length;
+      this.timeout = setTimeout(() => {
+        clearTimeout(this.timeout)
+        this.typingInterval = setInterval(() => {
+          if (remainingLength > 0) {
+            remainingLength--;
+            targetElement.nativeElement.innerHTML = string.slice(0, remainingLength)
+          } else {
+            clearInterval(this.typingInterval);
+            observer.complete()
+          }
+        }, 70)
+      }, 1200);
+    })
+  };
+
+  _setAnimationProgress(finishedString: string) {
+    this._setTagState(finishedString);
+    if (finishedString == this.nameText) {
+      this.firstLineFinished = true;
+    }
+
+    if (finishedString == this.jobTitle) {
+      this._finishAnimation();
+    }
   }
 
-  _finishFirstLine() {
-    this.firstLineFinished = true;
-    this.timeout = setTimeout(() => {
-      clearTimeout(this.timeout);
-      this._typeStrings(this.titleTagOpen, this.titleTagOpenEl);
-    }, 600)
+  _setTagState(elString: string) {
+    if (!this.h1TagFinished && elString == '<h1>') {
+      this.h1TagFinished = true;
+    };
+
+    if (!this.titleTagFinished && elString == '<title>') {
+      this.titleTagFinished = true;
+    }
   }
 
-  _finishSecondLine() {
+  _createTypeDelAnimationObs(string: string, targetElement: ElementRef) {
+    return new Observable<any>(observer => {
+
+      let remainingLength: number = string.length;
+      this.timeout = setTimeout(() => {
+        clearTimeout(this.timeout)
+        this.typingInterval = setInterval(() => {
+          if (remainingLength > 0) {
+            remainingLength--;
+            targetElement.nativeElement.innerHTML = string.slice(0, remainingLength)
+          } else {
+            clearInterval(this.typingInterval);
+            observer.complete()
+          }
+        }, 70)
+      }, 1200);
+    })
+  }
+
+
+  _finishAnimation() {
     this.secondLineFinished = true;
+    this.typeAnimationSubscription.unsubscribe();
     this.viewService.introFinished.next(true);
-    this._setFinalState()
+    this._setFinalState();
   }
 
   _checkIfHideIAmText(string: string) {
@@ -203,10 +238,8 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
     clearTimeout(this.timeout);
     clearInterval(this.typingInterval);
     clearInterval(this.cursorInterval);
-    this.typingSubscription.unsubscribe();
 
-    this._setFinalState();
-    this.viewService.introFinished.next(true);
+    this._finishAnimation();
   }
 
   _setFinalState() {
