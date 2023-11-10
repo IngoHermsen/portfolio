@@ -11,13 +11,14 @@
 
         .head-area {
             width: 100%;
+            max-width: 1000px;
             margin-top: 24px;
 
             span {
                 display: block;
                 margin-bottom: 24px;
             }
-        }
+        };
 
         .project-area {
             width: 100%;
