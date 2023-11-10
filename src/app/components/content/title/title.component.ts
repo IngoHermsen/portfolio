@@ -1,6 +1,6 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { Observable, Subject, Subscriber, Subscription, concat, timeInterval } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable, Subject, Subscription, concat } from 'rxjs';
 import { ViewService } from 'src/app/core/services/view.service';
 
 @Component({
@@ -230,5 +230,5 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
     clearInterval(this.cursorInterval);
     this._finishAnimation();
   };
-  
+
 }
