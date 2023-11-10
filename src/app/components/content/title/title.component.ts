@@ -166,24 +166,12 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   _setAnimationProgress(finishedString: string) {
-    this._setTagState(finishedString);
-    if (finishedString == this.nameText) {
-      this.firstLineFinished = true;
-    }
-
-    if (finishedString == this.jobTitle) {
-      this._finishAnimation();
-    }
-  };
-
-
-  _setTagState(elString: string) {
-    if (!this.h1TagFinished && elString == '<h1>') {
-      this.h1TagFinished = true;
-    };
-
-    if (!this.titleTagFinished && elString == '<title>') {
-      this.titleTagFinished = true;
+    switch (finishedString) {
+      case ('<h1>'): this.h1TagFinished = true; break;
+      case ('<title>'): this.titleTagFinished = true; break;
+      case (this.nameText): this.firstLineFinished = true; break;
+      case (this.jobTitle): this._finishAnimation(); break;
+      default: break;
     }
   };
 
