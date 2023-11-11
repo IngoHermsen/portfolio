@@ -201,6 +201,7 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
     this.firstLineFinished = true;
     this.secondLineFinished = true;
     this.finalView = true;
+    this.hideIAmText = window.innerWidth <= 1000;
 
     this._setElementsInnerText();
     this._setLanguageChangeSubscription();
