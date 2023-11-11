@@ -169,11 +169,21 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
     switch (finishedString) {
       case ('<h1>'): this.h1TagFinished = true; break;
       case ('<title>'): this.titleTagFinished = true; break;
+      case (this.iAmText): this._setIAmBehaviour(); break;
       case (this.nameText): this.firstLineFinished = true; break;
       case (this.jobTitle): this._finishAnimation(); break;
       default: break;
     }
   };
+
+
+  _setIAmBehaviour() {
+    if(window.innerWidth <= 1000) {
+      setTimeout(() => {
+        this.hideIAmText = true;
+      }, 1000)
+    }
+  }
 
 
   _finishAnimation() {

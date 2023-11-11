@@ -4,7 +4,7 @@
         <div class=title-text>
             <div class="line-1 text">
                 <div [hidden]="hideTag" class="h1-tag-open tag" #h1TagOpen></div>
-                <span [hidden]="secondLineFinished && hideTag || hideIAmText" class="greeting-text" #iAmText></span>
+                <span [hidden]="hideIAmText" class="greeting-text" #iAmText></span>
                 <span class="name-text" #nameText></span>
                 <span *ngIf="!firstLineFinished" [class.invisible]="cursorVisible" class="sim-cursor"
                     #simCursor>|</span>
