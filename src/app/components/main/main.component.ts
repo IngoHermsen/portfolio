@@ -26,7 +26,8 @@ export class MainComponent implements OnInit, AfterViewInit  {
 
       this.scrollUpProcedure();
     }
-  }
+  };
+  
 
    showAll: boolean = false;
   overflowScroll: boolean = false;
@@ -36,6 +37,7 @@ export class MainComponent implements OnInit, AfterViewInit  {
     public elementRef: ElementRef,
     public viewService: ViewService,
   ) {
+
     this.viewService.introFinished.subscribe((value) => {
       this.overflowScroll = value;
       this.showAll = value == true ? true : false;

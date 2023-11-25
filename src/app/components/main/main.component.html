@@ -1,4 +1,8 @@
-<div class="wrapper" #content>
+<div *ngIf="!viewService.fontsLoaded">
+    <app-loading-screen></app-loading-screen>
+</div>
+
+<div *ngIf="viewService.fontsLoaded" class="wrapper" #content>
     <div class="nav">
         <app-navigation></app-navigation>
     </div>

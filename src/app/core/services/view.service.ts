@@ -7,6 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ViewService implements AfterViewInit {
+  fontsLoaded: boolean = true;
   currentViewIndex = 0;
   introFinished: Subject<boolean> = new Subject;
   activeSection: Subject<string> = new Subject;
