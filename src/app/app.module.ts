@@ -28,6 +28,7 @@ import { MainComponent } from './components/main/main.component';
 import { SkillCarouselComponent } from './components/content/skill-carousel/skill-carousel.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -50,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DataProtectionComponent,
     MainComponent,
     SkillCarouselComponent,
+    LoadingScreenComponent,
   ],
   imports: [
     BrowserModule,
