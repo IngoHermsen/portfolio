@@ -102,8 +102,18 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
         ).subscribe()
       });
 
-      this.typeAnimationSubscription = this.animationProcedure$.subscribe();
+
+      setTimeout(() => {
+        this.typeAnimationSubscription = this.animationProcedure$.subscribe();
+        sessionStorage.setItem('loaded', '');
+      }, this._setIntroDelay())
     })
+  };
+
+
+  _setIntroDelay() {
+    let delay: number = sessionStorage.getItem('loaded') !== null ? 225 : 1000;
+    return delay;
   };
 
 
@@ -178,7 +188,7 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   _setIAmBehaviour() {
-    if(window.innerWidth <= 1000) {
+    if (window.innerWidth <= 1000) {
       setTimeout(() => {
         this.hideIAmText = true;
       }, 1000)
