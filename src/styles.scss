@@ -4,6 +4,11 @@
 @import "primeflex/primeflex.css";
 @import "node_modules/aos/dist/aos.css";
 
+:root {
+    --nav-height: 80px;
+    --bg-color: rgb(56, 55, 55);
+};
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,7 +16,7 @@ html {
 body {
     position: relative;
     color: white;
-    background-color: rgb(56, 55, 55);
+    background-color: var(--bg-color);
     margin: 0px;
     font-family: 'Poppins';
 
@@ -70,8 +75,8 @@ textarea {
 }
 
 .bg {
-    background-color: rgb(56, 55, 55);
-    padding-top: 80px;
+    background-color: var(--bg-color);
+    padding-top: var(--nav-height);
 }
 
 .nav-link {

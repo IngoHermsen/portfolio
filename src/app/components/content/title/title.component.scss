@@ -72,7 +72,7 @@ i {
     z-index: -1;
 
     .left-content {
-        padding-top: 80px;
+        padding-top: var(--nav-height);
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -170,13 +170,13 @@ i {
 
     .image {
         user-select: none;
-        padding-top: 80px;
+        padding-top: var(--nav-height);
         position: relative;
         width: 100%;
 
         img {
             position: absolute;
-            padding-top: 80px;
+            padding-top: var(--nav-height);
             opacity: 0;
             top: 0px;
             right: 120px;

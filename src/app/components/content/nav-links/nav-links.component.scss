@@ -5,7 +5,7 @@ nav {
     padding-right: 40px;
     gap: 24px;
     height: 100%;
-    background-color: rgb(56, 55, 55);
+    background-color: var(--bg-color);
 
     .active {
         &:after {
