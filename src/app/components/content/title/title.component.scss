@@ -1,8 +1,65 @@
+
+
+i {
+    bottom: 40px;
+    font-size: 40px;
+
+    &:hover {
+        cursor: pointer;
+        color: rgba(255, 182, 51, 255)
+    }
+}
+
 .transparentOverlay {
     position: relative;
     inset: 0px;
     height: 100vh;
-    // background-color: rgba(255, 0 ,0, 0.3)
+
+    .bottom-area {
+        user-select: none;
+        position: absolute;
+        bottom: 80px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skip {
+        opacity: 0.5;
+
+        &:hover {
+            opacity: unset;
+            cursor: pointer;
+        }
+    }
+
+    .pointdown-animation {
+
+        animation: pointdown 2s forwards;
+
+        @keyframes pointdown {
+            0% {
+                bottom: 80px;
+            }
+
+            25% {
+                bottom: 70px;
+            }
+
+            50% {
+                bottom: 80px;
+            }
+
+            75% {
+                bottom: 70px;
+            }
+
+            100% {
+                bottom: 80px;
+            }
+        }
+    }
 }
 
 .wrapper {
@@ -89,10 +146,7 @@
             }
 
         }
-    }
-
-
-
+    };
 
     .side-block {
         position: absolute;
@@ -112,7 +166,7 @@
                 width: 25%;
             }
         }
-    }
+    };
 
     .image {
         user-select: none;
@@ -131,7 +185,7 @@
             z-index: 1;
 
         }
-    }
+    };
 
     .show-image {
         animation: visible 300ms forwards;
@@ -148,67 +202,11 @@
 
     }
 
-    .bottom-area {
-        user-select: none;
-        position: absolute;
-        bottom: 80px;
-        width: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .skip {
-        opacity: 0.5;
-
-        &:hover {
-            opacity: unset;
-            cursor: pointer;
-        }
-    }
 
     .hidden {
         display: none;
     }
 
-    .pointdown-animation {
-
-        animation: pointdown 2s forwards;
-
-
-        @keyframes pointdown {
-            0% {
-                bottom: 80px;
-            }
-
-            25% {
-                bottom: 70px;
-            }
-
-            50% {
-                bottom: 80px;
-            }
-
-            75% {
-                bottom: 70px;
-            }
-
-            100% {
-                bottom: 80px;
-            }
-        }
-    }
-
-
-    i {
-        bottom: 40px;
-        font-size: 40px;
-
-        &:hover {
-            cursor: pointer;
-            color: rgba(255, 182, 51, 255)
-        }
-    }
 }
 
 
@@ -216,7 +214,7 @@
     .wrapper {
         .image {
             img {
-                right: 0px;
+                right: 100px;
             }
         }
     }
