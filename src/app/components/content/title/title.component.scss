@@ -1,9 +1,18 @@
+.transparentOverlay {
+    position: relative;
+    inset: 0px;
+    height: 100vh;
+    // background-color: rgba(255, 0 ,0, 0.3)
+}
+
 .wrapper {
     display: flex;
+    width: 100%;
     margin-left: 32px;
-    position: relative;
+    position: fixed;
     height: 100vh;
     overflow-x: hidden;
+    z-index: -1;
 
     .left-content {
         padding-top: 80px;

@@ -1,3 +1,4 @@
+
 <div class="wrapper">
     <div class="left-content">
         <img *ngIf="smallView" class="small-avatar" src="/assets/img/profile-image_1_small_white-bg.png" alt="small_profile_image">
@@ -30,4 +31,8 @@
         <i routerLink="/aboutme" (click)="viewService.jumpToSection('aboutMe')" class="pi pi-chevron-down"></i>
     </span>
     <div *ngIf="finalView && !smallView" class="side-block"></div>
+</div>
+
+<div class="transparentOverlay">
+
 </div>
