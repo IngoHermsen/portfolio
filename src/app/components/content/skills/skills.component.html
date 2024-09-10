@@ -16,7 +16,7 @@
     <div class="icons area">
         <ng-container *ngFor="let skill of skills, index as i">
             <div class="skill" data-aos="zoom-in" [class.highlight]="skill.highlight">
-                <img class="icon" src="./assets/icons/{{ skill.fileName }}" alt="">
+                <img draggable="false" class="icon" src="./assets/icons/{{ skill.fileName }}" alt="">
                 <div class="name">{{ skill.name }}</div>
             </div>
         </ng-container>
