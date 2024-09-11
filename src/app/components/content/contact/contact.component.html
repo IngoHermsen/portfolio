@@ -1,5 +1,5 @@
-<div class="content bg" data-aos="fade-right" data-aos-once="true">
-    <div class="text">
+<div class="content bg">
+    <div class="text" data-aos="fade-up-right" data-aos-duration="500" data-aos-once="true">
         <h1 translate="nav.Contact"></h1>
         <article [innerHTML]="'contact.contactMeText' | translate">
         </article>
@@ -8,7 +8,8 @@
         </div>
 
     </div>
-    <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true"
+    <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="fade-down-left" data-aos-easing="linear"
+    data-aos-duration="500" data-aos-once="true"
         (ngSubmit)="submitForm()">
         <span class=" p-float-label">
             <input formControlName="name" pInputText id="name">
