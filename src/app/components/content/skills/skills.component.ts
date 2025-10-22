@@ -8,19 +8,21 @@ import { Skill } from 'src/app/core/models/skill';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-  highlightedSkills: string[] = []
+  highlightedSkills: string[] = [];
 
   skills: Skill[] = [
-    { name: 'Angular', fileName: 'angular.png', highlight: false },
-    { name: 'TypeScript', fileName: 'typescript.png', highlight: false },
-    { name: 'JavaScript', fileName: 'javascript.png', highlight: false },
-    { name: 'HTML', fileName: 'html.png', highlight: false },
-    { name: 'Firebase', fileName: 'firebase.png', highlight: false },
-    { name: 'GIT', fileName: 'git.png', highlight: false },
-    { name: 'CSS', fileName: 'css.png', highlight: false },
-    { name: 'Rest-Api', fileName: 'rest-api.png', highlight: false },
-    { name: 'Scrum', fileName: 'scrum.png', highlight: false },
-    { name: 'Material Design', fileName: 'material-design.png', highlight: false }
+    { name: 'Angular', fileName: 'angular.png', highlight: false, inProgress: false },
+    { name: 'TypeScript', fileName: 'typescript.png', highlight: false, inProgress: false },
+    { name: 'JavaScript', fileName: 'javascript.png', highlight: false, inProgress: false },
+    { name: 'HTML', fileName: 'html.png', highlight: false, inProgress: false },
+    { name: 'Firebase', fileName: 'firebase.png', highlight: false, inProgress: false },
+    { name: 'GIT', fileName: 'git.png', highlight: false, inProgress: false },
+    { name: 'CSS', fileName: 'css.png', highlight: false, inProgress: false },
+    { name: 'Rest-Api', fileName: 'rest-api.png', highlight: false, inProgress: false },
+    { name: 'Scrum', fileName: 'scrum.png', highlight: false, inProgress: false },
+    { name: 'Material Design', fileName: 'material-design.png', highlight: false, inProgress: false },
+    { name: 'PHP', fileName: 'php.png', highlight: true, inProgress: true },
+    { name: 'SQL', fileName: 'sql.png', highlight: true, inProgress: true }
   ]
 
   constructor(
@@ -33,10 +35,10 @@ export class SkillsComponent implements OnInit {
 
   }
 
-  setHighlightedSkills(emitValue: any) {
-    this.highlightedSkills = emitValue;
+  setHighlightedSkills(emittedSkills: any) {
+    this.highlightedSkills = emittedSkills;
     this.skills.forEach(skill => {
-      skill.highlight = false
+        skill.highlight = false;
     })
 
     this.highlightedSkills.forEach(skillName => {
@@ -45,7 +47,7 @@ export class SkillsComponent implements OnInit {
           skill.highlight = true;
         }
       })
-    })  
+    })
   }
 
 }

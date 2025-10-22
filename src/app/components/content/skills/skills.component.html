@@ -18,6 +18,7 @@
             <div class="skill" data-aos="zoom-in" [class.highlight]="skill.highlight">
                 <img draggable="false" class="icon" src="./assets/icons/{{ skill.fileName }}" alt="">
                 <div class="name">{{ skill.name }}</div>
+                <span *ngIf="skill.inProgress" class="in-progress-badge">In Progress</span>
             </div>
         </ng-container>
     </div>
