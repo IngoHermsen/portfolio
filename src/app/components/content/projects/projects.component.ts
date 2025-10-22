@@ -17,7 +17,7 @@ export class ProjectsComponent {
     {
       type: 'Projekt-Management',
       title: 'JOIN',
-      usedTechs: ['Angular', 'Typescript', 'Firebase'],
+      usedTechs: ['Angular', 'Typescript', 'Firestore (Firebase)'],
       translateDescRef: 'projManDesc',
       link: 'https://join.ingo-hermsen.de',
       githubLink: 'https://github.com/IngoHermsen/Join-ext',
@@ -25,17 +25,17 @@ export class ProjectsComponent {
       jsDocLink: '',
       imagePath: 'join_xl.png'
     },
-    {
-      type: 'Instant-Messaging',
-      title: 'SLACK-CLONE',
-      usedTechs: ['Angular', 'Typescript', 'Firebase'],
-      translateDescRef: 'slackDesc',
-      link: 'https://slackclone.ingo-hermsen.de',
-      githubLink: 'https://github.com/IngoHermsen/slack-clone/tree/finalEdits',
-      jsDoc: false,
-      jsDocLink: '',
-      imagePath: 'slack-clone_xl.png'
-    },
+    // {
+    //   type: 'Instant-Messaging',
+    //   title: 'SLACK-CLONE',
+    //   usedTechs: ['Angular', 'Typescript', 'Firebase'],
+    //   translateDescRef: 'slackDesc',
+    //   link: 'https://slackclone.ingo-hermsen.de',
+    //   githubLink: 'https://github.com/IngoHermsen/slack-clone/tree/finalEdits',
+    //   jsDoc: false,
+    //   jsDocLink: '',
+    //   imagePath: 'slack-clone_xl.png'
+    // },
     {
       type: 'Browsergame',
       title: 'EL POLLO LOCO',

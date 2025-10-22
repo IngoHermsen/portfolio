@@ -29,7 +29,7 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
   typeAnimationSubscription!: Subscription;
 
   @ViewChild('h1TagOpen') h1TagOpenEl!: ElementRef;
-  @ViewChild('iAmText') iAmTextEl!: ElementRef;
+  // @ViewChild('iAmText') iAmTextEl!: ElementRef;
   @ViewChild('nameText') nameTextEl!: ElementRef;
   @ViewChild('titleTagOpen') titleTagOpenEl!: ElementRef;
   @ViewChild('jobTitleText') jobTitleTextEl!: ElementRef;
@@ -93,9 +93,9 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
       this.animationProcedure$ = new Observable(observer => {
         concat(
           this._provideTypeAnimationObs(this.h1TagOpen, this.h1TagOpenEl),
-          this._provideTypeAnimationObs(this.greeting, this.iAmTextEl),
-          this._provideDeleteAnimationObs(this.greeting, this.iAmTextEl),
-          this._provideTypeAnimationObs(this.iAmText, this.iAmTextEl),
+          // this._provideTypeAnimationObs(this.greeting, this.iAmTextEl),
+          // this._provideDeleteAnimationObs(this.greeting, this.iAmTextEl),
+          // this._provideTypeAnimationObs(this.iAmText, this.iAmTextEl),
           this._provideTypeAnimationObs(this.nameText, this.nameTextEl),
           this._provideTypeAnimationObs(this.titleTagOpen, this.titleTagOpenEl),
           this._provideTypeAnimationObs(this.jobTitle, this.jobTitleTextEl),
@@ -219,7 +219,7 @@ export class TitleComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   _setElementsInnerText() {
-    this.iAmTextEl.nativeElement.innerText = this.translate.instant('title.iAm');
+    // this.iAmTextEl.nativeElement.innerText = this.translate.instant('title.iAm');
     this.nameTextEl.nativeElement.innerText = this.nameText;
     this.titleTagOpenEl.nativeElement.innerText = this.titleTagOpen;
     this.jobTitleTextEl.nativeElement.innerText = this.jobTitle;
