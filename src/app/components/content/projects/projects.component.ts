@@ -15,6 +15,18 @@ export class ProjectsComponent {
   ) {
     this.projects = [
     {
+      type: 'Instant Messenger',
+      title: 'DABubble',
+      usedTechs: ['Angular', 'Typescript', 'Firestore (Firebase)'],
+      translateDescRef: 'daBubbleDesc',
+      link: 'https://dabubble.ingo-hermsen.de',
+      githubLink: 'https://github.com/IngoHermsen/DABubble',
+      jsDoc: false,
+      jsDocLink: '',
+      imagePath: 'dabubble_xl.png'
+    },
+    
+    {
       type: 'Projekt-Management',
       title: 'JOIN',
       usedTechs: ['Angular', 'Typescript', 'Firestore (Firebase)'],
@@ -25,17 +37,7 @@ export class ProjectsComponent {
       jsDocLink: '',
       imagePath: 'join_xl.png'
     },
-    // {
-    //   type: 'Instant-Messaging',
-    //   title: 'SLACK-CLONE',
-    //   usedTechs: ['Angular', 'Typescript', 'Firebase'],
-    //   translateDescRef: 'slackDesc',
-    //   link: 'https://slackclone.ingo-hermsen.de',
-    //   githubLink: 'https://github.com/IngoHermsen/slack-clone/tree/finalEdits',
-    //   jsDoc: false,
-    //   jsDocLink: '',
-    //   imagePath: 'slack-clone_xl.png'
-    // },
+
     {
       type: 'Browsergame',
       title: 'EL POLLO LOCO',

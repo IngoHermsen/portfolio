@@ -67,6 +67,12 @@
     }
 }
 
+@media only screen and (max-width: 650px) {
+    .content {
+        position: unset;
+    }
+}
+
 @media only screen and (max-width: 420px) {
     .content {
         text-align: center;

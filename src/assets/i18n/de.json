@@ -41,6 +41,7 @@
     },
     "projects": {
         "introText": "Hier präsentiere ich meine wichtigsten Web-Applikationen, sowohl für den Business-Bereich als auch ein OOP-Basiertes Jump-And-Run-Game.",
+        "daBubbleDesc": "Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Nutzerbasierte Projekte und Statusanpassung per Drag & Drop.",
         "projManDesc": "Übersichtliche Verwaltung von Aufgaben nach dem Kanban-Prinzip. Nutzerbasierte Projekte und Statusanpassung per Drag & Drop.",
         "slackDesc": "Nach dem Vorbild von 'Slack'. Enthält typische Messagingfunktionen wie Channel Management und Thread-basiertes Kommentarsystem. Nutzer- und Nachrichtenverwaltung mit NoSQL Firebase Datenbank mit Authentifizierung.",
         "polloDesc": "Prototyp eines Jump-And-Run Game mit Fokus auf objektorientierter Programmierung. Hilf Pepe sein Dorf zu verteidigen.",
